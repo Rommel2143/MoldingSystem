@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\moldingsystem\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,9 +25,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\161.214.201.109\shared\IT\moldingsystem\</UpdateUrl>
+    <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -170,28 +170,28 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="machine_output\addmold.Designer.vb">
+    <Compile Include="MACHINE_OUTPUT\addmold.Designer.vb">
       <DependentUpon>addmold.vb</DependentUpon>
     </Compile>
-    <Compile Include="machine_output\addmold.vb">
+    <Compile Include="MACHINE_OUTPUT\addmold.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="machine_output\addpartcode.Designer.vb">
+    <Compile Include="MACHINE_OUTPUT\addpartcode.Designer.vb">
       <DependentUpon>addpartcode.vb</DependentUpon>
     </Compile>
-    <Compile Include="machine_output\addpartcode.vb">
+    <Compile Include="MACHINE_OUTPUT\addpartcode.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="machine_output\dailyoutput.Designer.vb">
+    <Compile Include="MACHINE_OUTPUT\dailyoutput.Designer.vb">
       <DependentUpon>dailyoutput.vb</DependentUpon>
     </Compile>
-    <Compile Include="machine_output\dailyoutput.vb">
+    <Compile Include="MACHINE_OUTPUT\dailyoutput.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="machine_output\dailysetup.Designer.vb">
+    <Compile Include="MACHINE_OUTPUT\dailysetup.Designer.vb">
       <DependentUpon>dailysetup.vb</DependentUpon>
     </Compile>
-    <Compile Include="machine_output\dailysetup.vb">
+    <Compile Include="MACHINE_OUTPUT\dailysetup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -223,10 +223,16 @@
     <Compile Include="Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="machine_output\machine_frame.designer.vb">
+    <Compile Include="MACHINE_OUTPUT\machine_frame.designer.vb">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </Compile>
-    <Compile Include="machine_output\machine_frame.vb">
+    <Compile Include="MACHINE_OUTPUT\machine_frame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\resin_frame.Designer.vb">
+      <DependentUpon>resin_frame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\resin_frame.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -234,16 +240,16 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="machine_output\addmold.resx">
+    <EmbeddedResource Include="MACHINE_OUTPUT\addmold.resx">
       <DependentUpon>addmold.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="machine_output\addpartcode.resx">
+    <EmbeddedResource Include="MACHINE_OUTPUT\addpartcode.resx">
       <DependentUpon>addpartcode.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="machine_output\dailyoutput.resx">
+    <EmbeddedResource Include="MACHINE_OUTPUT\dailyoutput.resx">
       <DependentUpon>dailyoutput.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="machine_output\dailysetup.resx">
+    <EmbeddedResource Include="MACHINE_OUTPUT\dailysetup.resx">
       <DependentUpon>dailysetup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="molding_mainframe.resx">
@@ -258,8 +264,11 @@
     <EmbeddedResource Include="Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="machine_output\machine_frame.resx">
+    <EmbeddedResource Include="MACHINE_OUTPUT\machine_frame.resx">
       <DependentUpon>machine_frame.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\resin_frame.resx">
+      <DependentUpon>resin_frame.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -297,5 +306,6 @@
   <ItemGroup>
     <Content Include="TRC %281%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
