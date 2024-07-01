@@ -36,6 +36,7 @@ Partial Class resin_frame
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateVersionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SuggestToImproveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +52,7 @@ Partial Class resin_frame
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterlistToolStripMenuItem, Me.userstrip})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterlistToolStripMenuItem, Me.userstrip, Me.GenerateToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -141,6 +142,12 @@ Partial Class resin_frame
         Me.SuggestToImproveToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
         Me.SuggestToImproveToolStripMenuItem.Text = "Suggest to improve"
         '
+        'GenerateToolStripMenuItem
+        '
+        Me.GenerateToolStripMenuItem.Name = "GenerateToolStripMenuItem"
+        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(85, 49)
+        Me.GenerateToolStripMenuItem.Text = "generate"
+        '
         'resin_frame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -170,4 +177,5 @@ Partial Class resin_frame
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UpdateVersionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SuggestToImproveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GenerateToolStripMenuItem As ToolStripMenuItem
 End Class

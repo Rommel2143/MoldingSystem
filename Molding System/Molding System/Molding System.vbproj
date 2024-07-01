@@ -67,10 +67,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E72662BBAA7BACBB8100AB6AFD89E9C08E61292C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5E746965FB5CA5C956074033D18424023B5FDEA8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Molding System_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Molding System_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -103,8 +103,13 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.3.0\lib\net462\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.4.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -146,6 +151,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
     <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
     </Reference>
@@ -229,6 +235,12 @@
     <Compile Include="MACHINE_OUTPUT\machine_frame.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RESIN\qr_generator.Designer.vb">
+      <DependentUpon>qr_generator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\qr_generator.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RESIN\resin_frame.Designer.vb">
       <DependentUpon>resin_frame.vb</DependentUpon>
     </Compile>
@@ -267,11 +279,15 @@
     <EmbeddedResource Include="MACHINE_OUTPUT\machine_frame.resx">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\qr_generator.resx">
+      <DependentUpon>qr_generator.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RESIN\resin_frame.resx">
       <DependentUpon>resin_frame.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Molding System_1_TemporaryKey.pfx" />
     <None Include="Molding System_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
