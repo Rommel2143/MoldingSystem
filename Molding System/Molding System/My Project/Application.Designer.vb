@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Molding_System.qr_generator
+            Me.MainForm = Global.Molding_System.molding_mainframe
         End Sub
     End Class
 End Namespace
