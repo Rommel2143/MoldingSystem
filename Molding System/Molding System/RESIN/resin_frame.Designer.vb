@@ -158,6 +158,7 @@ Partial Class resin_frame
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "resin_frame"
         Me.Text = "resin_frame"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

@@ -74,7 +74,7 @@ Partial Class qr_generator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(575, 626)
+        Me.ClientSize = New System.Drawing.Size(589, 588)
         Me.Controls.Add(Me.pic1)
         Me.Controls.Add(Me.textinput)
         Me.Controls.Add(Me.Guna2Button1)

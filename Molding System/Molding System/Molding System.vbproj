@@ -145,6 +145,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -200,6 +201,12 @@
     <Compile Include="MACHINE_OUTPUT\dailysetup.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="main\molding_select.Designer.vb">
+      <DependentUpon>molding_select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\molding_select.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="molding_mainframe.Designer.vb">
       <DependentUpon>molding_mainframe.vb</DependentUpon>
@@ -241,10 +248,21 @@
     <Compile Include="RESIN\qr_generator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RESIN\resin_dataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resin_dataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RESIN\resin_frame.Designer.vb">
       <DependentUpon>resin_frame.vb</DependentUpon>
     </Compile>
     <Compile Include="RESIN\resin_frame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\resin_scan_IN.Designer.vb">
+      <DependentUpon>resin_scan_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\resin_scan_IN.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -263,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MACHINE_OUTPUT\dailysetup.resx">
       <DependentUpon>dailysetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\molding_select.resx">
+      <DependentUpon>molding_select.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="molding_mainframe.resx">
       <DependentUpon>molding_mainframe.vb</DependentUpon>
@@ -285,6 +306,9 @@
     <EmbeddedResource Include="RESIN\resin_frame.resx">
       <DependentUpon>resin_frame.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\resin_scan_IN.resx">
+      <DependentUpon>resin_scan_IN.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Molding System_1_TemporaryKey.pfx" />
@@ -302,6 +326,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RESIN\resin_dataset.xsc">
+      <DependentUpon>resin_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="RESIN\resin_dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>resin_dataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RESIN\resin_dataset.xss">
+      <DependentUpon>resin_dataset.xsd</DependentUpon>
+    </None>
     <None Include="Resources\duplicate.wav" />
   </ItemGroup>
   <ItemGroup>

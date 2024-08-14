@@ -65,4 +65,8 @@ Public Class machine_frame
     Private Sub AddMoldToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddMoldToolStripMenuItem.Click
         display_form(addmold)
     End Sub
+
+    Private Sub MasterlistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterlistToolStripMenuItem.Click
+
+    End Sub
 End Class

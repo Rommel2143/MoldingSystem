@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="resin_dataset" targetNamespace="http://tempuri.org/resin_dataset.xsd" xmlns:mstns="http://tempuri.org/resin_dataset.xsd" xmlns="http://tempuri.org/resin_dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="resin_dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="resin_dataset" msprop:Generator_UserDSName="resin_dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="resin_qr" msprop:Generator_TableClassName="resin_qrDataTable" msprop:Generator_TableVarName="tableresin_qr" msprop:Generator_TablePropName="resin_qr" msprop:Generator_RowDeletingName="resin_qrRowDeleting" msprop:Generator_RowChangingName="resin_qrRowChanging" msprop:Generator_RowEvHandlerName="resin_qrRowChangeEventHandler" msprop:Generator_RowDeletedName="resin_qrRowDeleted" msprop:Generator_UserTableName="resin_qr" msprop:Generator_RowChangedName="resin_qrRowChanged" msprop:Generator_RowEvArgName="resin_qrRowChangeEvent" msprop:Generator_RowClassName="resin_qrRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
