@@ -69,4 +69,12 @@ Public Class machine_frame
     Private Sub MasterlistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterlistToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub CreateStickerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateStickerToolStripMenuItem.Click
+        display_formscan(print_sticker)
+    End Sub
+
+    Private Sub ScaninToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScaninToolStripMenuItem.Click
+        display_formscan(resin_scan_IN)
+    End Sub
 End Class

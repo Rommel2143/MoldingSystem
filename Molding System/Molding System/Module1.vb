@@ -1,10 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Net.NetworkInformation
+Imports System.Text
 Module Module1
 
     Public Function connection() As MySqlConnection
         Return New MySqlConnection("server=PTI-027s;user id=Molding;password=molding123@;database=trcsystem")
-        ' Return New MySqlConnection("server=localhost;user id=Molding;password=molding123@;database=trcsystem")
+        'Return New MySqlConnection("server=localhost;user id=Molding;password=molding123@;database=trcsystem")
     End Function
     Public con As MySqlConnection = connection()
     Public result As String
@@ -95,6 +96,64 @@ Module Module1
             MessageBox.Show(ex.Message)
         Finally
             con.Close()
+
+        End Try
+    End Sub
+
+    Private generatedSerials As New HashSet(Of String)()
+
+    Public Function GenerateSerial() As String
+        Dim chars As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim serial As New StringBuilder()
+        Dim rand As New Random()
+        Dim newSerial As String
+
+        Do
+            serial.Clear()
+            For i As Integer = 1 To 6
+                serial.Append(chars(rand.Next(chars.Length)))
+            Next
+            newSerial = serial.ToString()
+        Loop While generatedSerials.Contains(newSerial) ' Repeat if serial already exists
+
+        generatedSerials.Add(newSerial) ' Store unique serial
+        Return newSerial
+    End Function
+
+    Public Sub cmb_display(sql As String, column As String, cmb As Guna.UI2.WinForms.Guna2ComboBox)
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand(sql, con)
+            dr = cmdselect.ExecuteReader
+            cmb.Items.Clear()
+            While (dr.Read())
+                cmb.Items.Add(dr.GetString(column))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub reload(ByVal sql As String, ByVal DTG As Object)
+        Try
+            dt = New DataTable
+            con.Close()
+            con.Open()
+            With cmd
+                .Connection = con
+                .CommandText = sql
+            End With
+            da.SelectCommand = cmd
+            da.Fill(dt)
+            DTG.DataSource = dt
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+            da.Dispose()
 
         End Try
     End Sub
