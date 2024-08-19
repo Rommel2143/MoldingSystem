@@ -85,6 +85,10 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -201,12 +205,6 @@
     <Compile Include="MACHINE_OUTPUT\dailysetup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\molding_select.Designer.vb">
-      <DependentUpon>molding_select.vb</DependentUpon>
-    </Compile>
-    <Compile Include="main\molding_select.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="molding_mainframe.Designer.vb">
       <DependentUpon>molding_mainframe.vb</DependentUpon>
@@ -242,10 +240,16 @@
     <Compile Include="MACHINE_OUTPUT\machine_frame.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RESIN\qr_generator.Designer.vb">
-      <DependentUpon>qr_generator.vb</DependentUpon>
+    <Compile Include="RESIN\print_qr.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>print_qr.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RESIN\qr_generator.vb">
+    <Compile Include="RESIN\print_sticker.Designer.vb">
+      <DependentUpon>print_sticker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\print_sticker.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RESIN\resin_dataset.Designer.vb">
@@ -253,16 +257,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>resin_dataset.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RESIN\resin_frame.Designer.vb">
-      <DependentUpon>resin_frame.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RESIN\resin_frame.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="RESIN\resin_scan_IN.Designer.vb">
       <DependentUpon>resin_scan_IN.vb</DependentUpon>
     </Compile>
     <Compile Include="RESIN\resin_scan_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\virgin_IN.Designer.vb">
+      <DependentUpon>virgin_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\virgin_IN.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -282,9 +286,6 @@
     <EmbeddedResource Include="MACHINE_OUTPUT\dailysetup.resx">
       <DependentUpon>dailysetup.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\molding_select.resx">
-      <DependentUpon>molding_select.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="molding_mainframe.resx">
       <DependentUpon>molding_mainframe.vb</DependentUpon>
     </EmbeddedResource>
@@ -300,14 +301,18 @@
     <EmbeddedResource Include="MACHINE_OUTPUT\machine_frame.resx">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RESIN\qr_generator.resx">
-      <DependentUpon>qr_generator.vb</DependentUpon>
+    <EmbeddedResource Include="RESIN\print_qr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>print_qr.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RESIN\resin_frame.resx">
-      <DependentUpon>resin_frame.vb</DependentUpon>
+    <EmbeddedResource Include="RESIN\print_sticker.resx">
+      <DependentUpon>print_sticker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\resin_scan_IN.resx">
       <DependentUpon>resin_scan_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\virgin_IN.resx">
+      <DependentUpon>virgin_IN.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -358,6 +363,11 @@
     <Content Include="Molding System.ico" />
     <Content Include="TRC %281%29.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="main\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

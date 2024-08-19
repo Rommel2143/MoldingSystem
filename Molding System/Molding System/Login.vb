@@ -63,10 +63,9 @@ Public Class Login
                 If dr.Read = True Then
                     fname = dr("fullname").ToString
                     idno = dr("IDno").ToString
-
-                    display_form(molding_select)
+                    display_form(machine_frame)
                     machine_frame.userstrip.Text = fname
-                    resin_frame.userstrip.Text = fname
+
                     labelerror.Visible = False
                 Else
                     noid()

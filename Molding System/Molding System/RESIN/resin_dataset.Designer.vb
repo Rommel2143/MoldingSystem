@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class resin_dataset
     Inherits Global.System.Data.DataSet
     
-    Private tableresin_qr As resin_qrDataTable
+    Private tableresin_serial As resin_serialDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class resin_dataset
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("resin_qr")) Is Nothing) Then
-                MyBase.Tables.Add(New resin_qrDataTable(ds.Tables("resin_qr")))
+            If (Not (ds.Tables("resin_serial")) Is Nothing) Then
+                MyBase.Tables.Add(New resin_serialDataTable(ds.Tables("resin_serial")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class resin_dataset
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property resin_qr() As resin_qrDataTable
+    Public ReadOnly Property resin_serial() As resin_serialDataTable
         Get
-            Return Me.tableresin_qr
+            Return Me.tableresin_serial
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class resin_dataset
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("resin_qr")) Is Nothing) Then
-                MyBase.Tables.Add(New resin_qrDataTable(ds.Tables("resin_qr")))
+            If (Not (ds.Tables("resin_serial")) Is Nothing) Then
+                MyBase.Tables.Add(New resin_serialDataTable(ds.Tables("resin_serial")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class resin_dataset
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableresin_qr = CType(MyBase.Tables("resin_qr"),resin_qrDataTable)
+        Me.tableresin_serial = CType(MyBase.Tables("resin_serial"),resin_serialDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableresin_qr) Is Nothing) Then
-                Me.tableresin_qr.InitVars
+            If (Not (Me.tableresin_serial) Is Nothing) Then
+                Me.tableresin_serial.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class resin_dataset
         Me.Namespace = "http://tempuri.org/resin_dataset.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableresin_qr = New resin_qrDataTable()
-        MyBase.Tables.Add(Me.tableresin_qr)
+        Me.tableresin_serial = New resin_serialDataTable()
+        MyBase.Tables.Add(Me.tableresin_serial)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeresin_qr() As Boolean
+    Private Function ShouldSerializeresin_serial() As Boolean
         Return false
     End Function
     
@@ -273,21 +273,31 @@ Partial Public Class resin_dataset
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub resin_qrRowChangeEventHandler(ByVal sender As Object, ByVal e As resin_qrRowChangeEvent)
+    Public Delegate Sub resin_serialRowChangeEventHandler(ByVal sender As Object, ByVal e As resin_serialRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class resin_qrDataTable
-        Inherits Global.System.Data.TypedTableBase(Of resin_qrRow)
+    Partial Public Class resin_serialDataTable
+        Inherits Global.System.Data.TypedTableBase(Of resin_serialRow)
+        
+        Private columnserial As Global.System.Data.DataColumn
+        
+        Private columnpartcode As Global.System.Data.DataColumn
+        
+        Private columncategory As Global.System.Data.DataColumn
+        
+        Private columnnumber As Global.System.Data.DataColumn
+        
+        Private columnqrcode As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "resin_qr"
+            Me.TableName = "resin_serial"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -319,6 +329,46 @@ Partial Public Class resin_dataset
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property serialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnserial
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property partcodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpartcode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property categoryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncategory
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property numberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumber
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property qrcodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnqrcode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -329,44 +379,44 @@ Partial Public Class resin_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As resin_qrRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As resin_serialRow
             Get
-                Return CType(Me.Rows(index),resin_qrRow)
+                Return CType(Me.Rows(index),resin_serialRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event resin_qrRowChanging As resin_qrRowChangeEventHandler
+        Public Event resin_serialRowChanging As resin_serialRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event resin_qrRowChanged As resin_qrRowChangeEventHandler
+        Public Event resin_serialRowChanged As resin_serialRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event resin_qrRowDeleting As resin_qrRowChangeEventHandler
+        Public Event resin_serialRowDeleting As resin_serialRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event resin_qrRowDeleted As resin_qrRowChangeEventHandler
+        Public Event resin_serialRowDeleted As resin_serialRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub Addresin_qrRow(ByVal row As resin_qrRow)
+        Public Overloads Sub Addresin_serialRow(ByVal row As resin_serialRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addresin_qrRow() As resin_qrRow
-            Dim rowresin_qrRow As resin_qrRow = CType(Me.NewRow,resin_qrRow)
-            Dim columnValuesArray(-1) As Object
-            rowresin_qrRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowresin_qrRow)
-            Return rowresin_qrRow
+        Public Overloads Function Addresin_serialRow(ByVal serial As String, ByVal partcode As String, ByVal category As String, ByVal number As String, ByVal qrcode() As Byte) As resin_serialRow
+            Dim rowresin_serialRow As resin_serialRow = CType(Me.NewRow,resin_serialRow)
+            Dim columnValuesArray() As Object = New Object() {serial, partcode, category, number, qrcode}
+            rowresin_serialRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowresin_serialRow)
+            Return rowresin_serialRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As resin_qrDataTable = CType(MyBase.Clone,resin_qrDataTable)
+            Dim cln As resin_serialDataTable = CType(MyBase.Clone,resin_serialDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -374,43 +424,58 @@ Partial Public Class resin_dataset
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New resin_qrDataTable()
+            Return New resin_serialDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnserial = MyBase.Columns("serial")
+            Me.columnpartcode = MyBase.Columns("partcode")
+            Me.columncategory = MyBase.Columns("category")
+            Me.columnnumber = MyBase.Columns("number")
+            Me.columnqrcode = MyBase.Columns("qrcode")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnserial = New Global.System.Data.DataColumn("serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnserial)
+            Me.columnpartcode = New Global.System.Data.DataColumn("partcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpartcode)
+            Me.columncategory = New Global.System.Data.DataColumn("category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncategory)
+            Me.columnnumber = New Global.System.Data.DataColumn("number", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumber)
+            Me.columnqrcode = New Global.System.Data.DataColumn("qrcode", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnqrcode)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Newresin_qrRow() As resin_qrRow
-            Return CType(Me.NewRow,resin_qrRow)
+        Public Function Newresin_serialRow() As resin_serialRow
+            Return CType(Me.NewRow,resin_serialRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New resin_qrRow(builder)
+            Return New resin_serialRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(resin_qrRow)
+            Return GetType(resin_serialRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.resin_qrRowChangedEvent) Is Nothing) Then
-                RaiseEvent resin_qrRowChanged(Me, New resin_qrRowChangeEvent(CType(e.Row,resin_qrRow), e.Action))
+            If (Not (Me.resin_serialRowChangedEvent) Is Nothing) Then
+                RaiseEvent resin_serialRowChanged(Me, New resin_serialRowChangeEvent(CType(e.Row,resin_serialRow), e.Action))
             End If
         End Sub
         
@@ -418,8 +483,8 @@ Partial Public Class resin_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.resin_qrRowChangingEvent) Is Nothing) Then
-                RaiseEvent resin_qrRowChanging(Me, New resin_qrRowChangeEvent(CType(e.Row,resin_qrRow), e.Action))
+            If (Not (Me.resin_serialRowChangingEvent) Is Nothing) Then
+                RaiseEvent resin_serialRowChanging(Me, New resin_serialRowChangeEvent(CType(e.Row,resin_serialRow), e.Action))
             End If
         End Sub
         
@@ -427,8 +492,8 @@ Partial Public Class resin_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.resin_qrRowDeletedEvent) Is Nothing) Then
-                RaiseEvent resin_qrRowDeleted(Me, New resin_qrRowChangeEvent(CType(e.Row,resin_qrRow), e.Action))
+            If (Not (Me.resin_serialRowDeletedEvent) Is Nothing) Then
+                RaiseEvent resin_serialRowDeleted(Me, New resin_serialRowChangeEvent(CType(e.Row,resin_serialRow), e.Action))
             End If
         End Sub
         
@@ -436,14 +501,14 @@ Partial Public Class resin_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.resin_qrRowDeletingEvent) Is Nothing) Then
-                RaiseEvent resin_qrRowDeleting(Me, New resin_qrRowChangeEvent(CType(e.Row,resin_qrRow), e.Action))
+            If (Not (Me.resin_serialRowDeletingEvent) Is Nothing) Then
+                RaiseEvent resin_serialRowDeleting(Me, New resin_serialRowChangeEvent(CType(e.Row,resin_serialRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Removeresin_qrRow(ByVal row As resin_qrRow)
+        Public Sub Removeresin_serialRow(ByVal row As resin_serialRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -470,7 +535,7 @@ Partial Public Class resin_dataset
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "resin_qrDataTable"
+            attribute2.FixedValue = "resin_serialDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -517,16 +582,151 @@ Partial Public Class resin_dataset
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class resin_qrRow
+    Partial Public Class resin_serialRow
         Inherits Global.System.Data.DataRow
         
-        Private tableresin_qr As resin_qrDataTable
+        Private tableresin_serial As resin_serialDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableresin_qr = CType(Me.Table,resin_qrDataTable)
+            Me.tableresin_serial = CType(Me.Table,resin_serialDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property serial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.serialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.serialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property partcode() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.partcodeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'partcode' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.partcodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property category() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.categoryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'category' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.categoryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property number() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.numberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'number' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.numberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property qrcode() As Byte()
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.qrcodeColumn),Byte())
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'qrcode' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.qrcodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsserialNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.serialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetserialNull()
+            Me(Me.tableresin_serial.serialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspartcodeNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.partcodeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpartcodeNull()
+            Me(Me.tableresin_serial.partcodeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscategoryNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.categoryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcategoryNull()
+            Me(Me.tableresin_serial.categoryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsnumberNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.numberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetnumberNull()
+            Me(Me.tableresin_serial.numberColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsqrcodeNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.qrcodeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetqrcodeNull()
+            Me(Me.tableresin_serial.qrcodeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -534,16 +734,16 @@ Partial Public Class resin_dataset
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class resin_qrRowChangeEvent
+    Public Class resin_serialRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As resin_qrRow
+        Private eventRow As resin_serialRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As resin_qrRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As resin_serialRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -551,7 +751,7 @@ Partial Public Class resin_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As resin_qrRow
+        Public ReadOnly Property Row() As resin_serialRow
             Get
                 Return Me.eventRow
             End Get

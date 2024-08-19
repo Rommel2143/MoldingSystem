@@ -36,6 +36,11 @@ Partial Class machine_frame
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateVersionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SuggestToImproveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreateStickerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ScaninToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RECYCLEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MIXEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +56,7 @@ Partial Class machine_frame
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterlistToolStripMenuItem, Me.userstrip})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterlistToolStripMenuItem, Me.userstrip, Me.ResinToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -141,6 +146,37 @@ Partial Class machine_frame
         Me.SuggestToImproveToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.SuggestToImproveToolStripMenuItem.Text = "Suggest to improve"
         '
+        'ResinToolStripMenuItem
+        '
+        Me.ResinToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem})
+        Me.ResinToolStripMenuItem.Name = "ResinToolStripMenuItem"
+        Me.ResinToolStripMenuItem.Size = New System.Drawing.Size(58, 49)
+        Me.ResinToolStripMenuItem.Text = "Resin"
+        '
+        'CreateStickerToolStripMenuItem
+        '
+        Me.CreateStickerToolStripMenuItem.Name = "CreateStickerToolStripMenuItem"
+        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.CreateStickerToolStripMenuItem.Text = "Create Sticker"
+        '
+        'ScaninToolStripMenuItem
+        '
+        Me.ScaninToolStripMenuItem.Name = "ScaninToolStripMenuItem"
+        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.ScaninToolStripMenuItem.Text = "VIRGIN"
+        '
+        'RECYCLEDToolStripMenuItem
+        '
+        Me.RECYCLEDToolStripMenuItem.Name = "RECYCLEDToolStripMenuItem"
+        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.RECYCLEDToolStripMenuItem.Text = "RECYCLED"
+        '
+        'MIXEDToolStripMenuItem
+        '
+        Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
+        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.MIXEDToolStripMenuItem.Text = "MIXED"
+        '
         'machine_frame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -170,4 +206,9 @@ Partial Class machine_frame
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UpdateVersionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SuggestToImproveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ResinToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreateStickerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ScaninToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RECYCLEDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MIXEDToolStripMenuItem As ToolStripMenuItem
 End Class
