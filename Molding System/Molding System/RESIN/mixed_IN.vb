@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class virgin_IN
+Public Class Mixed_IN
 
 
 
@@ -16,12 +16,12 @@ Public Class virgin_IN
                 Dim category As String = parts(2).Trim()
                 Dim series As String = parts(3).Trim()
 
-                If category = "V" Then
+                If category = "M" Then
                     con.Close()
                     con.Open()
 
                     ' Check for duplicates
-                    Dim selectdata As New MySqlCommand("SELECT resinid, serialno FROM molding_resin_virgin WHERE resinid=@resinid AND serialno=@serialno", con)
+                    Dim selectdata As New MySqlCommand("SELECT resinid, serialno FROM molding_resin_mixed WHERE resinid=@resinid AND serialno=@serialno", con)
                     With selectdata.Parameters
                         .AddWithValue("@resinid", partcode)
                         .AddWithValue("@serialno", series)
@@ -35,7 +35,7 @@ Public Class virgin_IN
                         con.Open()
 
                         ' Insert the new record
-                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin_virgin`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`)
+                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin_mixed`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`)
                                                            VALUES (@resinid, @serial_code, @serialno,@qty,@userin, @datein)", con)
                         With selectcmd.Parameters
                             .AddWithValue("@resinid", partcode)
@@ -51,7 +51,7 @@ Public Class virgin_IN
                     End If
                 Else
                     ' Not virgin
-                    showerror("Resin not Virgin")
+                    showerror("Resin not Mixed")
                 End If
             Else
                 ' Invalid QR code format
@@ -91,7 +91,7 @@ Public Class virgin_IN
         If e.KeyCode = Keys.Enter Then
             processQRcode(txtqr.Text)
 
-            reload("SELECT rm.partcode, rv.serialno FROM molding_resin_virgin rv
+            reload("SELECT rm.partcode, rv.serialno FROM molding_resin_mixed rv
                     JOIN molding_resin_masterlist rm ON rm.id= rv.resinid
                     WHERE rv.datein= '" & datedb & "' and rv.userin= '" & idno & "'", datagrid1)
 

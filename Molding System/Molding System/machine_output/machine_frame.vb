@@ -75,6 +75,18 @@ Public Class machine_frame
     End Sub
 
     Private Sub ScaninToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScaninToolStripMenuItem.Click
-        display_formscan(resin_scan_IN)
+        display_formscan(virgin_IN)
+    End Sub
+
+    Private Sub DashboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DashboardToolStripMenuItem.Click
+        display_formscan(resin_dashboard)
+    End Sub
+
+    Private Sub RECYCLEDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RECYCLEDToolStripMenuItem.Click
+        display_formscan(Recycled_IN)
+    End Sub
+
+    Private Sub MIXEDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MIXEDToolStripMenuItem.Click
+        display_formscan(mixed_IN)
     End Sub
 End Class

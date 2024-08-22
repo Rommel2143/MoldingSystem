@@ -9,6 +9,7 @@ Public Class print_sticker
     Dim resin_weight As Decimal
 
     Dim startqty As Integer = 1
+    Dim newqty As Integer
     Private Sub print_memo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'loadrpt()
         cmb_display("SELECT DISTINCT(type) FROM `molding_resin_masterlist`", "type", cmb_type)
@@ -75,60 +76,65 @@ Public Class print_sticker
 
     End Sub
 
+
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_generate.Click
+        Try
+            con.Close()
+            con.Open()
+            Dim selectcmd As New MySqlCommand("SELECT MAX(serialno) FROM molding_resin_" & cmb_category.Text & " WHERE resinid=@resinid", con)
+            selectcmd.Parameters.AddWithValue("@resinid", resin_id)
+            selectcmd.Parameters.AddWithValue("@category", category)
 
-        con.Close()
-        con.Open()
-        Dim selectcmd As New MySqlCommand("SELECT COUNT(id) as id FROM `molding_resin_serial` WHERE resinid='" & resin_id & "' ", con)
-        With selectcmd.Parameters
-            .AddWithValue("@partcode", cmb_resin.Text)
-        End With
+            dr = selectcmd.ExecuteReader()
+            If dr.Read() Then
+                newqty = startqty + dr.GetInt32(0)
+            End If
+            dr.Close() ' Close the reader after usage
 
-        dr = selectcmd.ExecuteReader
-        If dr.Read = True Then
-            startqty += dr.GetInt32("id")
-        End If
+            ' Clear the DataGridView and DataTable
+            datagrid1.Rows.Clear()
+            dt_records.Clear()
 
-        ' Clear the DataGridView and DataTable
-        datagrid1.Rows.Clear()
-        dt_records.Clear()
+            If dt_records.Columns.Count = 0 Then
+                dt_records.Columns.Add("serial", GetType(String))
+                dt_records.Columns.Add("partcode", GetType(String))
+                dt_records.Columns.Add("category", GetType(String))
+                dt_records.Columns.Add("number", GetType(String))
+                dt_records.Columns.Add("qrcode", GetType(Byte())) ' Byte array for the QR code image
+            End If
 
+            dt_records.Rows.Clear()
 
-        If dt_records.Columns.Count = 0 Then
-            dt_records.Columns.Add("serial", GetType(String))
-            dt_records.Columns.Add("partcode", GetType(String))
-            dt_records.Columns.Add("category", GetType(String))
-            dt_records.Columns.Add("number", GetType(String))
-            dt_records.Columns.Add("qrcode", GetType(Byte())) ' Byte array for the QR code image
-        End If
+            ' Get the quantity input from txt_qty
+            Dim qty As Integer
+            If Integer.TryParse(txt_qty.Text, qty) Then
+                ' Generate rows based on the quantity
+                For i As Integer = newqty + 1 To newqty + qty
+                    Dim serial_no As String = $"{resin_id}|{resin_weight}|{category}|{i}"
 
-        dt_records.Rows.Clear()
-        ' Get the quantity input from txt_qty
-        Dim qty As Integer
-        If Integer.TryParse(txt_qty.Text, qty) Then
-            ' Generate rows based on the quantity
-            For i As Integer = startqty To qty
+                    ' Generate the QR code and convert it to a byte array
+                    Dim qrImage As Image = GenerateQRCode(serial_no)
+                    Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
 
-                Dim serial_no As String = $"{resin_id}-{resin_weight}-{category}-{i}"
+                    ' Add the data and QR code to the DataTable
+                    dt_records.Rows.Add(serial_no, cmb_resin.Text, category, i, qrImageBytes)
 
-                ' Add the data to the DataTable
-                Dim qrImage As Image = GenerateQRCode(serial_no)
-                Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
+                    ' Also add to the DataGridView for visual confirmation
+                    datagrid1.Rows.Add(i, serial_no)
+                Next
 
-                ' Add the data and QR code to the DataTable
-                dt_records.Rows.Add(serial_no, cmb_resin.Text, category, i, qrImageBytes)
-
-                ' Also add to the DataGridView for visual confirmation
-                datagrid1.Rows.Add(i, serial_no)
-            Next
-
-            ' Load the report
-            loadrpt()
-
-        Else
-            MessageBox.Show("Please enter a valid quantity.")
-        End If
+                ' Load the report
+                loadrpt()
+            Else
+                MessageBox.Show("Please enter a valid quantity.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close() ' Ensure the connection is closed
+        End Try
     End Sub
+
 
     Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_category.SelectedIndexChanged
         Select Case cmb_category.Text

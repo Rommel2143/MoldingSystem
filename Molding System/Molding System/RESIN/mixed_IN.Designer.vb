@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class resin_scan_IN
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Mixed_IN
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,17 +20,16 @@ Partial Class resin_scan_IN
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(resin_scan_IN))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mixed_IN))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
-        Me.texterror = New System.Windows.Forms.Label()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.panelerror = New Guna.UI2.WinForms.Guna2Panel()
+        Me.texterror = New System.Windows.Forms.Label()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.lbl_count2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -41,48 +40,17 @@ Partial Class resin_scan_IN
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labelerror.SuspendLayout()
-        Me.Guna2Panel1.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
+        Me.panelerror.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'labelerror
-        '
-        Me.labelerror.BackColor = System.Drawing.Color.Tomato
-        Me.labelerror.Controls.Add(Me.texterror)
-        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 799)
-        Me.labelerror.Name = "labelerror"
-        Me.labelerror.Size = New System.Drawing.Size(1399, 19)
-        Me.labelerror.TabIndex = 223
-        Me.labelerror.Visible = False
-        '
-        'texterror
-        '
-        Me.texterror.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.texterror.AutoSize = True
-        Me.texterror.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.texterror.ForeColor = System.Drawing.Color.White
-        Me.texterror.Location = New System.Drawing.Point(656, -2)
-        Me.texterror.Name = "texterror"
-        Me.texterror.Size = New System.Drawing.Size(74, 21)
-        Me.texterror.TabIndex = 203
-        Me.texterror.Text = "INVALID"
-        '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(22, 44)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
-        Me.Guna2Panel1.TabIndex = 224
-        '
         'Guna2GroupBox3
         '
+        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Guna2GroupBox3.Controls.Add(Me.panelerror)
         Me.Guna2GroupBox3.Controls.Add(Me.Guna2Separator1)
         Me.Guna2GroupBox3.Controls.Add(Me.lbl_count2)
         Me.Guna2GroupBox3.Controls.Add(Me.Label7)
@@ -92,11 +60,34 @@ Partial Class resin_scan_IN
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(60, 20)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(102, 39)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(1209, 680)
-        Me.Guna2GroupBox3.TabIndex = 214
+        Me.Guna2GroupBox3.TabIndex = 228
         Me.Guna2GroupBox3.Text = "Scan QR"
+        '
+        'panelerror
+        '
+        Me.panelerror.BackColor = System.Drawing.Color.Tomato
+        Me.panelerror.Controls.Add(Me.texterror)
+        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.panelerror.Location = New System.Drawing.Point(0, 661)
+        Me.panelerror.Name = "panelerror"
+        Me.panelerror.Size = New System.Drawing.Size(1209, 19)
+        Me.panelerror.TabIndex = 227
+        Me.panelerror.Visible = False
+        '
+        'texterror
+        '
+        Me.texterror.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.texterror.AutoSize = True
+        Me.texterror.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.texterror.ForeColor = System.Drawing.Color.White
+        Me.texterror.Location = New System.Drawing.Point(567, -2)
+        Me.texterror.Name = "texterror"
+        Me.texterror.Size = New System.Drawing.Size(74, 21)
+        Me.texterror.TabIndex = 203
+        Me.texterror.Text = "INVALID"
         '
         'Guna2Separator1
         '
@@ -190,7 +181,7 @@ Partial Class resin_scan_IN
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -238,7 +229,7 @@ Partial Class resin_scan_IN
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1251, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(1264, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -253,9 +244,9 @@ Partial Class resin_scan_IN
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(0, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(65, 21)
+        Me.Label10.Size = New System.Drawing.Size(77, 21)
         Me.Label10.TabIndex = 204
-        Me.Label10.Text = "Scan IN"
+        Me.Label10.Text = "Mixed IN"
         '
         'txtdate
         '
@@ -263,7 +254,7 @@ Partial Class resin_scan_IN
         Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
         Me.txtdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdate.ForeColor = System.Drawing.Color.White
-        Me.txtdate.Location = New System.Drawing.Point(1272, 0)
+        Me.txtdate.Location = New System.Drawing.Point(1285, 0)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.Size = New System.Drawing.Size(127, 20)
         Me.txtdate.TabIndex = 1
@@ -279,26 +270,24 @@ Partial Class resin_scan_IN
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1399, 20)
-        Me.Guna2Panel2.TabIndex = 222
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1412, 20)
+        Me.Guna2Panel2.TabIndex = 229
         '
-        'resin_scan_IN
+        'Mixed_IN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1399, 818)
-        Me.Controls.Add(Me.labelerror)
-        Me.Controls.Add(Me.Guna2Panel1)
+        Me.ClientSize = New System.Drawing.Size(1412, 758)
+        Me.Controls.Add(Me.Guna2GroupBox3)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "resin_scan_IN"
-        Me.Text = "resin_scan_IN"
+        Me.Name = "Mixed_IN"
+        Me.Text = "mixed_IN"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.labelerror.ResumeLayout(False)
-        Me.labelerror.PerformLayout()
-        Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2GroupBox3.ResumeLayout(False)
         Me.Guna2GroupBox3.PerformLayout()
+        Me.panelerror.ResumeLayout(False)
+        Me.panelerror.PerformLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
@@ -307,10 +296,9 @@ Partial Class resin_scan_IN
 
     End Sub
 
-    Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents texterror As Label
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents panelerror As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents texterror As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents lbl_count2 As Label
     Friend WithEvents Label7 As Label
