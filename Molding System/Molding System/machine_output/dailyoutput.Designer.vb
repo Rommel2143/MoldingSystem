@@ -349,9 +349,9 @@ Partial Class dailyoutput
         Me.Guna2RadioButton2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2RadioButton2.Location = New System.Drawing.Point(39, 50)
         Me.Guna2RadioButton2.Name = "Guna2RadioButton2"
-        Me.Guna2RadioButton2.Size = New System.Drawing.Size(440, 24)
+        Me.Guna2RadioButton2.Size = New System.Drawing.Size(195, 24)
         Me.Guna2RadioButton2.TabIndex = 184
-        Me.Guna2RadioButton2.Text = "FG ( will be automatically scanned ""IN"" on inventory system)"
+        Me.Guna2RadioButton2.Text = "FG ( Ready for Delivery )"
         Me.Guna2RadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.Guna2RadioButton2.UncheckedState.BorderThickness = 2
         Me.Guna2RadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent
@@ -400,7 +400,7 @@ Partial Class dailyoutput
         Me.GroupBox1.Controls.Add(Me.Guna2RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(454, 78)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(635, 92)
+        Me.GroupBox1.Size = New System.Drawing.Size(369, 92)
         Me.GroupBox1.TabIndex = 185
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Please Check Accordingly"
@@ -416,9 +416,9 @@ Partial Class dailyoutput
         Me.Guna2RadioButton1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2RadioButton1.Location = New System.Drawing.Point(39, 21)
         Me.Guna2RadioButton1.Name = "Guna2RadioButton1"
-        Me.Guna2RadioButton1.Size = New System.Drawing.Size(583, 24)
+        Me.Guna2RadioButton1.Size = New System.Drawing.Size(262, 24)
         Me.Guna2RadioButton1.TabIndex = 183
-        Me.Guna2RadioButton1.Text = "WIP ( will go to next process to be MANUALLY scanned ""IN"" on inventory system)"
+        Me.Guna2RadioButton1.Text = "WIP (Undergo to the next Process)"
         Me.Guna2RadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.Guna2RadioButton1.UncheckedState.BorderThickness = 2
         Me.Guna2RadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent

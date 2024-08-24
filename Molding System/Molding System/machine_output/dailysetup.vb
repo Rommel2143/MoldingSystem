@@ -26,7 +26,7 @@ Public Class dailysetup
 
             con.Close()
             con.Open()
-            Dim cmd1 As New MySqlCommand("SELECT DISTINCT `partcode` FROM `tblmaster`
+            Dim cmd1 As New MySqlCommand("SELECT DISTINCT `partcode` FROM `inventory_fg_masterlist`
                                             ORDER BY `partcode` DESC", con)
             dr = cmd1.ExecuteReader
             txtcode.Items.Clear()
@@ -68,7 +68,7 @@ Public Class dailysetup
             con.Open()
             Dim cmdrefreshgrid As New MySqlCommand("SELECT p.`id`, p.`user`, p.`operator`, p.`machine`, p.`materiallot`, p.`partcode`,sp.`partname`, p.`moldno`, p.`target`, p.`date1`, p.`shift1` 
                                                     FROM `moldingtblsetup` p
-                                                    JOIN `tblmaster` sp on p.`partcode`= sp.`partcode`
+                                                    JOIN `inventory_fg_masterlist` sp on p.`partcode`= sp.`partcode`
                                                      WHERE  `user` like '" & idno & "' and `date1` like '" & date1 & "' and `shift1` like '" & shift1 & "'", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
@@ -150,7 +150,7 @@ Public Class dailysetup
         con.Close()
         con.Open()
         Dim cmd1 As New MySqlCommand("SELECT tm.`partname`, mml.`moldno` 
-                                       FROM `tblmaster` tm
+                                       FROM `inventory_fg_masterlist` tm
 INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
                                         WHERE  tm.`partcode` like '" & txtcode.Text & "'", con)
         dr = cmd1.ExecuteReader
@@ -200,7 +200,7 @@ INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
         If e.KeyCode = Keys.Enter Then
             Try
                 con.Open()
-                Dim cmd As New MySqlCommand("SELECT * FROM `tblscanoperator` WHERE `IDno` LIKE '%" & txtuser.Text & "%'", con)
+                Dim cmd As New MySqlCommand("SELECT * FROM `inventory_fg_scanoperator` WHERE `IDno` LIKE '%" & txtuser.Text & "%'", con)
 
                 dr = cmd.ExecuteReader
                 If dr.Read = True Then
@@ -282,7 +282,7 @@ INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
             con.Open()
             Dim cmdrefreshgrid As New MySqlCommand("SELECT p.`id`, p.`user`, p.`operator`, p.`machine`, p.`materiallot`, p.`partcode`,sp.`partname`, p.`moldno`, p.`target`, p.`date1`, p.`shift1` 
                                                     FROM `moldingtblsetup` p
-                                                    JOIN `tblmaster` sp on p.`partcode`= sp.`partcode`
+                                                    JOIN `inventory_fg_masterlist` sp on p.`partcode`= sp.`partcode`
                                                      WHERE (`user` like '" & idno & "' and `date1` like '" & date1 & "' and `shift1` like '" & shift1 & "') and (`machine` REGEXP '" & cmbsearch.Text & "' or `materiallot` REGEXP '" & cmbsearch.Text & "')", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)

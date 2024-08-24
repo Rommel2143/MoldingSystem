@@ -89,4 +89,8 @@ Public Class machine_frame
     Private Sub MIXEDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MIXEDToolStripMenuItem.Click
         display_formscan(mixed_IN)
     End Sub
+
+    Private Sub SCANFGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SCANFGToolStripMenuItem.Click
+        display_formscan(daily_FG)
+    End Sub
 End Class

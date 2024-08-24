@@ -4,11 +4,11 @@ Public Class addpartcode
         con.Close()
         con.Open()
         Dim cmd2 As New MySqlCommand("SELECT distinct `partcode`
-                                        FROM `tblmaster` 
+                                        FROM `inventory_fg_masterlist` 
                                         WHERE `partcode` Like '" & txtcode.Text & "'", con)
         dr = cmd2.ExecuteReader
         If dr.Read = False Then
-            insertpartcode("INSERT INTO `tblmaster`(`partcode`, `partname`, `section`)
+            insertpartcode("INSERT INTO `inventory_fg_masterlist`(`partcode`, `partname`, `section`)
                              VALUES ('" & txtcode.Text & "','" & txtname.Text & "','MOLDING')")
         Else
             MessageBox.Show("Partcode already Registered!")

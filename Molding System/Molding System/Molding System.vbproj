@@ -208,6 +208,12 @@
     <Compile Include="MACHINE_OUTPUT\dailysetup.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MACHINE_OUTPUT\daily_FG.Designer.vb">
+      <DependentUpon>daily_FG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MACHINE_OUTPUT\daily_FG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="molding_mainframe.Designer.vb">
       <DependentUpon>molding_mainframe.vb</DependentUpon>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MACHINE_OUTPUT\dailysetup.resx">
       <DependentUpon>dailysetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MACHINE_OUTPUT\daily_FG.resx">
+      <DependentUpon>daily_FG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="molding_mainframe.resx">
       <DependentUpon>molding_mainframe.vb</DependentUpon>

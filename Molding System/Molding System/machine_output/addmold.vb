@@ -3,7 +3,7 @@ Public Class addmold
     Private Sub addmold_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         con.Close()
         con.Open()
-        Dim cmd1 As New MySqlCommand("SELECT DISTINCT `partcode` FROM `tblmaster`
+        Dim cmd1 As New MySqlCommand("SELECT DISTINCT `partcode` FROM `inventory_fg_masterlist`
                                             ORDER BY `partcode` DESC", con)
         dr = cmd1.ExecuteReader
         txtcode.Items.Clear()
@@ -16,7 +16,7 @@ Public Class addmold
         con.Close()
         con.Open()
         Dim cmd1 As New MySqlCommand("SELECT tm.`partname`, mml.`moldno` 
-                                       FROM `tblmaster` tm
+                                       FROM `inventory_fg_masterlist` tm
 INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
                                         WHERE  tm.`partcode` like '" & txtcode.Text & "'", con)
         dr = cmd1.ExecuteReader
@@ -46,7 +46,7 @@ INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
             con.Close()
             con.Open()
             Dim cmd1 As New MySqlCommand("SELECT tm.`partname`, mml.`moldno` 
-                                       FROM `tblmaster` tm
+                                       FROM `inventory_fg_masterlist` tm
 INNER JOIN `molding_mold_list` mml ON mml.partcode=tm.partcode
                                         WHERE  tm.`partcode` like '" & txtcode.Text & "'", con)
             dr = cmd1.ExecuteReader

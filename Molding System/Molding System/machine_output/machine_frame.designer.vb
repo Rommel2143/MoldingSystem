@@ -42,6 +42,7 @@ Partial Class machine_frame
         Me.ScaninToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RECYCLEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MIXEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SCANFGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,7 +67,7 @@ Partial Class machine_frame
         '
         'MasterlistToolStripMenuItem
         '
-        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.AddPartcodeToolStripMenuItem, Me.AddMoldToolStripMenuItem})
+        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.AddPartcodeToolStripMenuItem, Me.AddMoldToolStripMenuItem, Me.SCANFGToolStripMenuItem})
         Me.MasterlistToolStripMenuItem.Image = CType(resources.GetObject("MasterlistToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MasterlistToolStripMenuItem.Name = "MasterlistToolStripMenuItem"
         Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(196, 49)
@@ -76,28 +77,28 @@ Partial Class machine_frame
         '
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
-        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PARTSToolStripMenuItem.Text = "Daily Setup"
         '
         'FGToolStripMenuItem
         '
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
-        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FGToolStripMenuItem.Text = "Daily Output"
         '
         'AddPartcodeToolStripMenuItem
         '
         Me.AddPartcodeToolStripMenuItem.Image = CType(resources.GetObject("AddPartcodeToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddPartcodeToolStripMenuItem.Name = "AddPartcodeToolStripMenuItem"
-        Me.AddPartcodeToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.AddPartcodeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AddPartcodeToolStripMenuItem.Text = "Add Partcode"
         '
         'AddMoldToolStripMenuItem
         '
         Me.AddMoldToolStripMenuItem.Image = CType(resources.GetObject("AddMoldToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddMoldToolStripMenuItem.Name = "AddMoldToolStripMenuItem"
-        Me.AddMoldToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.AddMoldToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AddMoldToolStripMenuItem.Text = "Add Mold"
         '
         'userstrip
@@ -153,6 +154,7 @@ Partial Class machine_frame
         Me.ResinToolStripMenuItem.Name = "ResinToolStripMenuItem"
         Me.ResinToolStripMenuItem.Size = New System.Drawing.Size(63, 49)
         Me.ResinToolStripMenuItem.Text = "Resin"
+        Me.ResinToolStripMenuItem.Visible = False
         '
         'DashboardToolStripMenuItem
         '
@@ -183,6 +185,12 @@ Partial Class machine_frame
         Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
         Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.MIXEDToolStripMenuItem.Text = "MIXED"
+        '
+        'SCANFGToolStripMenuItem
+        '
+        Me.SCANFGToolStripMenuItem.Name = "SCANFGToolStripMenuItem"
+        Me.SCANFGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SCANFGToolStripMenuItem.Text = "SCAN FG"
         '
         'machine_frame
         '
@@ -219,4 +227,5 @@ Partial Class machine_frame
     Friend WithEvents RECYCLEDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MIXEDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DashboardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SCANFGToolStripMenuItem As ToolStripMenuItem
 End Class

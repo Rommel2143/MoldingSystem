@@ -119,7 +119,7 @@ Public Class dailyoutput
             '1: SELECT TOTAL STOCK ON PARTCODE
             add_to_stock_wip()
             '2 : SAVE DATA TO INVENTORY SYSTEM 
-            insert_to_tblscan_WIP()
+            insert_to_inventory_fg_scan_WIP()
             refreshgrid()
 
             labelerror.Visible = False
@@ -133,12 +133,12 @@ Public Class dailyoutput
         End Try
 
     End Sub
-    Private Sub insert_to_tblscan_WIP()
+    Private Sub insert_to_inventory_fg_scan_WIP()
         Try
 
             con.Close()
             con.Open()
-            Dim cmdinsert As New MySqlCommand("INSERT INTO `tblscan`(`status`,
+            Dim cmdinsert As New MySqlCommand("INSERT INTO `inventory_fg_scan`(`status`,
                                                                     `batch`,
                                                                     `userin`,
                                                                     `datein`,
@@ -169,12 +169,12 @@ Public Class dailyoutput
         End Try
 
     End Sub
-    Private Sub insert_to_tblscan_FG()
+    Private Sub insert_to_inventory_fg_scan_FG()
         Try
 
             con.Close()
             con.Open()
-            Dim cmdinsert As New MySqlCommand("INSERT INTO `tblscan`(`status`,
+            Dim cmdinsert As New MySqlCommand("INSERT INTO `inventory_fg_scan`(`status`,
                                                                     `batch`,
                                                                     `userin`,
                                                                     `datein`,
@@ -209,7 +209,7 @@ Public Class dailyoutput
         Try
             con.Close()
             con.Open()
-            Dim cmdupdate As New MySqlCommand("UPDATE `tblmaster` SET `wipstock`= (`wipstock`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
+            Dim cmdupdate As New MySqlCommand("UPDATE `inventory_fg_masterlist` SET `wipstock`= (`wipstock`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
             cmdupdate.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -222,7 +222,7 @@ Public Class dailyoutput
         Try
             con.Close()
             con.Open()
-            Dim cmdupdate As New MySqlCommand("UPDATE `tblmaster` SET `stockF1`= (`stockF1`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
+            Dim cmdupdate As New MySqlCommand("UPDATE `inventory_fg_masterlist` SET `stockF1`= (`stockF1`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
             cmdupdate.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -236,7 +236,7 @@ Public Class dailyoutput
             '2 : SAVE DATA TO INVENTORY SYSTEM
             add_to_stock_FG()
 
-            insert_to_tblscan_FG()
+            insert_to_inventory_fg_scan_FG()
             '3 : INSERT DATA TO MOLDING DAILY
             con.Close()
             con.Open()
@@ -331,7 +331,7 @@ Public Class dailyoutput
         Try
             Dim cmd As New MySqlCommand("SELECT p.`partcode`,p.`moldno`,p.`target`,pt.`partname`
                                           FROM `moldingtblsetup` p
-                                           JOIN `tblmaster` pt ON pt.`partcode`= p.`partcode`
+                                           JOIN `inventory_fg_masterlist` pt ON pt.`partcode`= p.`partcode`
                                             WHERE `materiallot` like '" & cmbmaterial.Text & "' and `machine` like '" & cmbmachine.Text & "' and `date1` like '" & txtdate.Text & "'", con)
             dr = cmd.ExecuteReader
             If (dr.Read()) = True Then
