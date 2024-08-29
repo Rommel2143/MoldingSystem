@@ -3,6 +3,7 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class resin_dashboard
+    Dim selected_category As String
     Private Sub resin_dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker_resindelivery.Value = Date.Now
 
@@ -70,16 +71,25 @@ Public Class resin_dashboard
     End Sub
 
     Private Sub dtpicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker_resindelivery.ValueChanged
-        reload("SELECT rm.partcode, COUNT(rs.id) AS Total FROM molding_resin_virgin rs
+        reload("SELECT rm.partcode, COUNT(rs.id) AS Total FROM molding_resin rs
                  JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
-                  WHERE rs.datein ='" & dtpicker_resindelivery.Value.ToString("yyyy-MM-dd") & "'
+                  WHERE rs.datein ='" & dtpicker_resindelivery.Value.ToString("yyyy-MM-dd") & "' and category='V'
                 GROUP BY rs.resinid", datagrid_delivery)
     End Sub
 
     Private Sub cmb_stock_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_stock.SelectedIndexChanged
 
-        reload("SELECT rm.partcode, SUM(rs.qty) AS Total FROM molding_resin_" & cmb_stock.Text & " rs
+        Select Case cmb_stock.Text
+            Case "Virgin"
+                selected_category = "V"
+            Case "Recycled"
+                selected_category = "R"
+            Case "Mixed"
+                selected_category = "M"
+        End Select
+        reload("SELECT rm.partcode, SUM(rs.qty) AS Total FROM molding_resin rs
                  JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
+                WHERE rs.category='" & selected_category & "' and rs.status='1'
                 GROUP BY rm.partcode", datagrid_stock)
 
     End Sub

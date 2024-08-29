@@ -1,8 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
-Public Class virgin_IN
-
-
-
+﻿
+Imports MySql.Data.MySqlClient
+Public Class recycled_OUT
+    Dim status As Integer
+    Dim qty_rem As Decimal
+    Dim partcode As String
     Private Sub processQRcode(qrcode As String)
         Try
             ' Split the QR code
@@ -11,56 +12,56 @@ Public Class virgin_IN
 
             ' Check if the split result has the correct length
             If parts.Length >= 3 Then
-                Dim partcode As String = parts(0).Trim()
+                partcode = parts(0).Trim()
                 Dim qty As Decimal = parts(1).Trim()
                 Dim category As String = parts(2).Trim()
                 Dim series As String = parts(3).Trim()
 
-                If category = "V" Then
+                If category = "R" Then
                     con.Close()
                     con.Open()
 
                     ' Check for duplicates
-                    Dim selectdata As New MySqlCommand("SELECT serial_code,status FROM molding_resin WHERE serial_code='" & qrcode & "'", con)
+                    Dim selectdata As New MySqlCommand("SELECT serial_code,status,qty FROM molding_resin WHERE serial_code='" & qrcode & "'", con)
                     With selectdata.Parameters
                         .AddWithValue("@resinid", partcode)
                         .AddWithValue("@serialno", series)
                     End With
                     dr = selectdata.ExecuteReader
                     If dr.Read() = True Then
-                        Dim status As Integer = dr.GetInt32("status")
+                        status = dr.GetInt32("status")
+                        qty_rem = dr.GetDecimal("qty")
+
                         Select Case status
                             Case 0
-                                showerror("Status: OUT")
-                            Case 1
                                 ' Duplicate found
-                                showduplicate("Serial already scanned!")
+                                showduplicate("Status : OUT")
+                            Case 1
+                                If qty_rem = txt_qty.Value Then
+                                    con.Close()
+                                    con.Open()
+                                    ' Insert the new record
+                                    Dim updatedata As New MySqlCommand("UPDATE `molding_resin` SET `userout`='" & idno & "', `dateout`='" & datedb & "', `status`='0' WHERE serial_code='" & txtqr.Text & "'", con)
+                                    updatedata.ExecuteNonQuery()
+                                    panelerror.Visible = False
 
+                                ElseIf qty_rem > txt_qty.Value Then
+                                    con.Close()
+                                    con.Open()
+
+                                    Dim updatedata As New MySqlCommand("UPDATE `molding_resin` SET `userout`='" & idno & "', `dateout`='" & datedb & "', qty='" & qty_rem - txt_qty.Value & "' WHERE serial_code='" & txtqr.Text & "'", con)
+                                    updatedata.ExecuteNonQuery()
+                                Else
+                                    showerror("Qty greater than remaining :" & qty_rem)
+                                End If
                         End Select
                     Else
-                            con.Close()
-                        con.Open()
-
-                        ' Insert the new record
-                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`,`category`)
-                                                           VALUES (@resinid, @serial_code, @serialno,@qty,@userin, @datein, @category)", con)
-                        With selectcmd.Parameters
-                            .AddWithValue("@resinid", partcode)
-                            .AddWithValue("@serial_code", qrcode)
-                            .AddWithValue("@serialno", series)
-                            .AddWithValue("@qty", qty)
-                            .AddWithValue("@userin", idno)
-                            .AddWithValue("@datein", datedb)
-                            .AddWithValue("@category", "V")
-                        End With
-                        selectcmd.ExecuteNonQuery()
-                        panelerror.Visible = False
-
-
+                        'no record
+                        showerror("No record found!")
                     End If
                 Else
                     ' Not virgin
-                    showerror("Resin not Virgin")
+                    showerror("Resin not Recycled")
                 End If
             Else
                 ' Invalid QR code format
@@ -72,8 +73,10 @@ Public Class virgin_IN
         Finally
             con.Close()
             reload("SELECT  `partcode`, `serialno`, `qty` FROM `molding_resin` 
-                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='V' and userin='" & idno & "' and datein='" & datedb & "'", datagrid1)
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='R' and userout='" & idno & "' and dateout='" & datedb & "'", datagrid1)
             lbl_count2.Text = datagrid1.Rows.Count
+            txtqr.Clear()
+            txtqr.Focus()
         End Try
     End Sub
 
@@ -103,8 +106,6 @@ Public Class virgin_IN
         If e.KeyCode = Keys.Enter Then
             processQRcode(txtqr.Text)
 
-
-            txtqr.Clear()
         End If
     End Sub
 
@@ -112,15 +113,11 @@ Public Class virgin_IN
 
     End Sub
 
-    Private Sub virgin_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub btn_proceed_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub datagrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellContentClick
-
-    End Sub
-
-    Private Sub Guna2GroupBox3_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox3.Click
+    Private Sub recycled_OUT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

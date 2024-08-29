@@ -8,7 +8,7 @@ Public Class print_sticker
     Dim resin_id As String
     Dim resin_weight As Decimal
 
-    Dim startqty As Integer = 1
+    Dim startqty As Integer = 0
     Dim newqty As Integer
     Private Sub print_memo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'loadrpt()
@@ -45,11 +45,11 @@ Public Class print_sticker
     End Sub
 
 
-    Private Sub txt_qty_TextChanged(sender As Object, e As EventArgs) Handles txt_qty.TextChanged
+    Private Sub txt_qty_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txt_qty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_qty.KeyPress
+    Private Sub txt_qty_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
@@ -81,13 +81,17 @@ Public Class print_sticker
         Try
             con.Close()
             con.Open()
-            Dim selectcmd As New MySqlCommand("SELECT MAX(serialno) FROM molding_resin_" & cmb_category.Text & " WHERE resinid=@resinid", con)
+            Dim selectcmd As New MySqlCommand("SELECT MAX(serialno) FROM molding_resin WHERE resinid=@resinid and category=@category", con)
             selectcmd.Parameters.AddWithValue("@resinid", resin_id)
             selectcmd.Parameters.AddWithValue("@category", category)
-
             dr = selectcmd.ExecuteReader()
             If dr.Read() Then
-                newqty = startqty + dr.GetInt32(0)
+                If Not IsDBNull(dr(0)) Then
+                    newqty = startqty + dr.GetInt32(0)
+                Else
+                    newqty = startqty
+                End If
+
             End If
             dr.Close() ' Close the reader after usage
 

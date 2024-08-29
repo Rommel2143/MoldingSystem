@@ -30,6 +30,7 @@ Partial Class machine_frame
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddPartcodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddMoldToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SCANFGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MinimizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,9 +41,15 @@ Partial Class machine_frame
         Me.DashboardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateStickerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ScaninToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RECYCLEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MIXEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SCANFGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,7 +64,7 @@ Partial Class machine_frame
         'MenuStrip1
         '
         Me.MenuStrip1.AutoSize = False
-        Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterlistToolStripMenuItem, Me.userstrip, Me.ResinToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
@@ -67,39 +74,50 @@ Partial Class machine_frame
         '
         'MasterlistToolStripMenuItem
         '
-        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.AddPartcodeToolStripMenuItem, Me.AddMoldToolStripMenuItem, Me.SCANFGToolStripMenuItem})
+        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.SCANFGToolStripMenuItem, Me.AddPartcodeToolStripMenuItem, Me.AddMoldToolStripMenuItem})
         Me.MasterlistToolStripMenuItem.Image = CType(resources.GetObject("MasterlistToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MasterlistToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MasterlistToolStripMenuItem.Name = "MasterlistToolStripMenuItem"
-        Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(196, 49)
-        Me.MasterlistToolStripMenuItem.Text = "Machine Daily Output"
+        Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(116, 49)
+        Me.MasterlistToolStripMenuItem.Text = "Machine"
         '
         'PARTSToolStripMenuItem
         '
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PARTSToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
-        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(197, 38)
         Me.PARTSToolStripMenuItem.Text = "Daily Setup"
         '
         'FGToolStripMenuItem
         '
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FGToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
-        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(197, 38)
         Me.FGToolStripMenuItem.Text = "Daily Output"
         '
         'AddPartcodeToolStripMenuItem
         '
         Me.AddPartcodeToolStripMenuItem.Image = CType(resources.GetObject("AddPartcodeToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddPartcodeToolStripMenuItem.Name = "AddPartcodeToolStripMenuItem"
-        Me.AddPartcodeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AddPartcodeToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.AddPartcodeToolStripMenuItem.Text = "Add Partcode"
         '
         'AddMoldToolStripMenuItem
         '
         Me.AddMoldToolStripMenuItem.Image = CType(resources.GetObject("AddMoldToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddMoldToolStripMenuItem.Name = "AddMoldToolStripMenuItem"
-        Me.AddMoldToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AddMoldToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.AddMoldToolStripMenuItem.Text = "Add Mold"
+        '
+        'SCANFGToolStripMenuItem
+        '
+        Me.SCANFGToolStripMenuItem.Image = CType(resources.GetObject("SCANFGToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SCANFGToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.SCANFGToolStripMenuItem.Name = "SCANFGToolStripMenuItem"
+        Me.SCANFGToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.SCANFGToolStripMenuItem.Text = "SCAN FG"
         '
         'userstrip
         '
@@ -150,47 +168,97 @@ Partial Class machine_frame
         '
         'ResinToolStripMenuItem
         '
-        Me.ResinToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem})
+        Me.ResinToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem, Me.AddItemToolStripMenuItem})
+        Me.ResinToolStripMenuItem.Image = CType(resources.GetObject("ResinToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ResinToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ResinToolStripMenuItem.Name = "ResinToolStripMenuItem"
-        Me.ResinToolStripMenuItem.Size = New System.Drawing.Size(63, 49)
+        Me.ResinToolStripMenuItem.Size = New System.Drawing.Size(93, 49)
         Me.ResinToolStripMenuItem.Text = "Resin"
-        Me.ResinToolStripMenuItem.Visible = False
         '
         'DashboardToolStripMenuItem
         '
+        Me.DashboardToolStripMenuItem.Image = CType(resources.GetObject("DashboardToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.DashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(200, 38)
         Me.DashboardToolStripMenuItem.Text = "Dashboard"
         '
         'CreateStickerToolStripMenuItem
         '
+        Me.CreateStickerToolStripMenuItem.Image = CType(resources.GetObject("CreateStickerToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CreateStickerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CreateStickerToolStripMenuItem.Name = "CreateStickerToolStripMenuItem"
-        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.CreateStickerToolStripMenuItem.Text = "Create Sticker"
+        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.CreateStickerToolStripMenuItem.Text = "Print Serial"
         '
         'ScaninToolStripMenuItem
         '
+        Me.ScaninToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem, Me.OUTToolStripMenuItem})
+        Me.ScaninToolStripMenuItem.Image = CType(resources.GetObject("ScaninToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ScaninToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ScaninToolStripMenuItem.Name = "ScaninToolStripMenuItem"
-        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(200, 38)
         Me.ScaninToolStripMenuItem.Text = "VIRGIN"
+        '
+        'INToolStripMenuItem
+        '
+        Me.INToolStripMenuItem.Name = "INToolStripMenuItem"
+        Me.INToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.INToolStripMenuItem.Text = "IN"
+        '
+        'OUTToolStripMenuItem
+        '
+        Me.OUTToolStripMenuItem.Name = "OUTToolStripMenuItem"
+        Me.OUTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OUTToolStripMenuItem.Text = "OUT"
         '
         'RECYCLEDToolStripMenuItem
         '
+        Me.RECYCLEDToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem2, Me.OUTToolStripMenuItem2})
+        Me.RECYCLEDToolStripMenuItem.Image = CType(resources.GetObject("RECYCLEDToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RECYCLEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RECYCLEDToolStripMenuItem.Name = "RECYCLEDToolStripMenuItem"
-        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(200, 38)
         Me.RECYCLEDToolStripMenuItem.Text = "RECYCLED"
+        '
+        'INToolStripMenuItem2
+        '
+        Me.INToolStripMenuItem2.Name = "INToolStripMenuItem2"
+        Me.INToolStripMenuItem2.Size = New System.Drawing.Size(111, 22)
+        Me.INToolStripMenuItem2.Text = "IN"
+        '
+        'OUTToolStripMenuItem2
+        '
+        Me.OUTToolStripMenuItem2.Name = "OUTToolStripMenuItem2"
+        Me.OUTToolStripMenuItem2.Size = New System.Drawing.Size(111, 22)
+        Me.OUTToolStripMenuItem2.Text = "OUT"
         '
         'MIXEDToolStripMenuItem
         '
+        Me.MIXEDToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem1, Me.OUTToolStripMenuItem1})
+        Me.MIXEDToolStripMenuItem.Image = CType(resources.GetObject("MIXEDToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MIXEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
-        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(200, 38)
         Me.MIXEDToolStripMenuItem.Text = "MIXED"
         '
-        'SCANFGToolStripMenuItem
+        'INToolStripMenuItem1
         '
-        Me.SCANFGToolStripMenuItem.Name = "SCANFGToolStripMenuItem"
-        Me.SCANFGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SCANFGToolStripMenuItem.Text = "SCAN FG"
+        Me.INToolStripMenuItem1.Name = "INToolStripMenuItem1"
+        Me.INToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
+        Me.INToolStripMenuItem1.Text = "IN"
+        '
+        'OUTToolStripMenuItem1
+        '
+        Me.OUTToolStripMenuItem1.Name = "OUTToolStripMenuItem1"
+        Me.OUTToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
+        Me.OUTToolStripMenuItem1.Text = "OUT"
+        '
+        'AddItemToolStripMenuItem
+        '
+        Me.AddItemToolStripMenuItem.Name = "AddItemToolStripMenuItem"
+        Me.AddItemToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.AddItemToolStripMenuItem.Text = "Add item"
         '
         'machine_frame
         '
@@ -228,4 +296,11 @@ Partial Class machine_frame
     Friend WithEvents MIXEDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DashboardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SCANFGToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents INToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OUTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents INToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents OUTToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents INToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents OUTToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents AddItemToolStripMenuItem As ToolStripMenuItem
 End Class

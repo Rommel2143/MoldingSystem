@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -249,10 +249,22 @@
     <Compile Include="MACHINE_OUTPUT\machine_frame.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RESIN\add_resin.Designer.vb">
+      <DependentUpon>add_resin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\add_resin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RESIN\mixed_IN.Designer.vb">
       <DependentUpon>mixed_IN.vb</DependentUpon>
     </Compile>
     <Compile Include="RESIN\mixed_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\mixed_OUT.Designer.vb">
+      <DependentUpon>mixed_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\mixed_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RESIN\print_qr.vb">
@@ -267,10 +279,16 @@
     <Compile Include="RESIN\print_sticker.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RESIN\Recycled_IN.Designer.vb">
-      <DependentUpon>Recycled_IN.vb</DependentUpon>
+    <Compile Include="RESIN\recycled_IN.Designer.vb">
+      <DependentUpon>recycled_IN.vb</DependentUpon>
     </Compile>
-    <Compile Include="RESIN\Recycled_IN.vb">
+    <Compile Include="RESIN\recycled_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\recycled_OUT.Designer.vb">
+      <DependentUpon>recycled_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\recycled_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RESIN\resin_dashboard.Designer.vb">
@@ -288,6 +306,12 @@
       <DependentUpon>virgin_IN.vb</DependentUpon>
     </Compile>
     <Compile Include="RESIN\virgin_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESIN\virgin_OUT.Designer.vb">
+      <DependentUpon>virgin_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\virgin_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -325,8 +349,14 @@
     <EmbeddedResource Include="MACHINE_OUTPUT\machine_frame.resx">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\add_resin.resx">
+      <DependentUpon>add_resin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RESIN\mixed_IN.resx">
       <DependentUpon>mixed_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\mixed_OUT.resx">
+      <DependentUpon>mixed_OUT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\print_qr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -335,14 +365,20 @@
     <EmbeddedResource Include="RESIN\print_sticker.resx">
       <DependentUpon>print_sticker.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RESIN\Recycled_IN.resx">
-      <DependentUpon>Recycled_IN.vb</DependentUpon>
+    <EmbeddedResource Include="RESIN\recycled_IN.resx">
+      <DependentUpon>recycled_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\recycled_OUT.resx">
+      <DependentUpon>recycled_OUT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\resin_dashboard.resx">
       <DependentUpon>resin_dashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\virgin_IN.resx">
       <DependentUpon>virgin_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\virgin_OUT.resx">
+      <DependentUpon>virgin_OUT.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

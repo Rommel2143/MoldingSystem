@@ -1,7 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Mixed_IN
-
-
+Public Class mixed_IN
 
     Private Sub processQRcode(qrcode As String)
         Try
@@ -12,7 +10,7 @@ Public Class Mixed_IN
             ' Check if the split result has the correct length
             If parts.Length >= 3 Then
                 Dim partcode As String = parts(0).Trim()
-                Dim qty As String = parts(1).Trim()
+                Dim qty As Decimal = parts(1).Trim()
                 Dim category As String = parts(2).Trim()
                 Dim series As String = parts(3).Trim()
 
@@ -21,22 +19,29 @@ Public Class Mixed_IN
                     con.Open()
 
                     ' Check for duplicates
-                    Dim selectdata As New MySqlCommand("SELECT resinid, serialno FROM molding_resin_mixed WHERE resinid=@resinid AND serialno=@serialno", con)
+                    Dim selectdata As New MySqlCommand("SELECT serial_code,status FROM molding_resin WHERE serial_code='" & qrcode & "'", con)
                     With selectdata.Parameters
                         .AddWithValue("@resinid", partcode)
                         .AddWithValue("@serialno", series)
                     End With
                     dr = selectdata.ExecuteReader
                     If dr.Read() = True Then
-                        ' Duplicate found
-                        showduplicate("Serial already scanned!")
+                        Dim status As Integer = dr.GetInt32("status")
+                        Select Case status
+                            Case 0
+                                showerror("Status: OUT")
+                            Case 1
+                                ' Duplicate found
+                                showduplicate("Serial already scanned!")
+
+                        End Select
                     Else
                         con.Close()
                         con.Open()
 
                         ' Insert the new record
-                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin_mixed`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`)
-                                                           VALUES (@resinid, @serial_code, @serialno,@qty,@userin, @datein)", con)
+                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`,`category`)
+                                                           VALUES (@resinid, @serial_code, @serialno,@qty,@userin, @datein, @category)", con)
                         With selectcmd.Parameters
                             .AddWithValue("@resinid", partcode)
                             .AddWithValue("@serial_code", qrcode)
@@ -44,10 +49,12 @@ Public Class Mixed_IN
                             .AddWithValue("@qty", qty)
                             .AddWithValue("@userin", idno)
                             .AddWithValue("@datein", datedb)
+                            .AddWithValue("@category", "M")
                         End With
                         selectcmd.ExecuteNonQuery()
                         panelerror.Visible = False
-                        lbl_count2.Text = datagrid1.Rows.Count
+
+
                     End If
                 Else
                     ' Not virgin
@@ -62,10 +69,11 @@ Public Class Mixed_IN
             MessageBox.Show(ex.Message)
         Finally
             con.Close()
+            reload("SELECT `partcode`, `serialno`, `qty` FROM `molding_resin` 
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='M' and userin='" & idno & "' and datein='" & datedb & "'", datagrid1)
+            lbl_count2.Text = datagrid1.Rows.Count
         End Try
     End Sub
-
-
     Private Sub showerror(text As String)
         Try
             texterror.Text = text
@@ -91,9 +99,6 @@ Public Class Mixed_IN
         If e.KeyCode = Keys.Enter Then
             processQRcode(txtqr.Text)
 
-            reload("SELECT rm.partcode, rv.serialno FROM molding_resin_mixed rv
-                    JOIN molding_resin_masterlist rm ON rm.id= rv.resinid
-                    WHERE rv.datein= '" & datedb & "' and rv.userin= '" & idno & "'", datagrid1)
 
             txtqr.Clear()
         End If
@@ -104,6 +109,14 @@ Public Class Mixed_IN
     End Sub
 
     Private Sub virgin_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub datagrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellContentClick
+
+    End Sub
+
+    Private Sub Guna2GroupBox3_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox3.Click
 
     End Sub
 End Class

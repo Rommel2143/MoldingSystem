@@ -74,23 +74,40 @@ Public Class machine_frame
         display_formscan(print_sticker)
     End Sub
 
-    Private Sub ScaninToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScaninToolStripMenuItem.Click
-        display_formscan(virgin_IN)
-    End Sub
-
     Private Sub DashboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DashboardToolStripMenuItem.Click
         display_formscan(resin_dashboard)
     End Sub
 
-    Private Sub RECYCLEDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RECYCLEDToolStripMenuItem.Click
-        display_formscan(Recycled_IN)
-    End Sub
-
-    Private Sub MIXEDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MIXEDToolStripMenuItem.Click
-        display_formscan(mixed_IN)
-    End Sub
 
     Private Sub SCANFGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SCANFGToolStripMenuItem.Click
         display_formscan(daily_FG)
+    End Sub
+
+    Private Sub INToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem.Click
+        display_formscan(virgin_IN)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem.Click
+        display_formscan(virgin_OUT)
+    End Sub
+
+    Private Sub INToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem1.Click
+        display_formscan(mixed_IN)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem1.Click
+        display_formscan(mixed_OUT)
+    End Sub
+
+    Private Sub INToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem2.Click
+        display_formscan(recycled_IN)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem2.Click
+        display_formscan(recycled_OUT)
+    End Sub
+
+    Private Sub AddItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddItemToolStripMenuItem.Click
+        display_formscan(add_resin)
     End Sub
 End Class

@@ -1,7 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class recycled_IN
-
-
+Public Class mixed_OUT
 
     Private Sub processQRcode(qrcode As String)
         Try
@@ -16,7 +14,7 @@ Public Class recycled_IN
                 Dim category As String = parts(2).Trim()
                 Dim series As String = parts(3).Trim()
 
-                If category = "R" Then
+                If category = "M" Then
                     con.Close()
                     con.Open()
 
@@ -31,35 +29,26 @@ Public Class recycled_IN
                         Dim status As Integer = dr.GetInt32("status")
                         Select Case status
                             Case 0
-                                showerror("Status: OUT")
-                            Case 1
                                 ' Duplicate found
                                 showduplicate("Serial already scanned!")
+                            Case 1
+                                con.Close()
+                                con.Open()
+
+                                ' Insert the new record
+                                Dim updatedata As New MySqlCommand("UPDATE `molding_resin` SET `userout`='" & idno & "', `dateout`='" & datedb & "', `status`='0' WHERE serial_code='" & qrcode & "'", con)
+                                updatedata.ExecuteNonQuery()
+                                panelerror.Visible = False
+
 
                         End Select
                     Else
-                        con.Close()
-                        con.Open()
-
-                        ' Insert the new record
-                        Dim selectcmd As New MySqlCommand("INSERT INTO `molding_resin`(`resinid`, `serial_code`, `serialno`,qty,userin ,`datein`,`category`)
-                                                           VALUES (@resinid, @serial_code, @serialno,@qty,@userin, @datein, @category)", con)
-                        With selectcmd.Parameters
-                            .AddWithValue("@resinid", partcode)
-                            .AddWithValue("@serial_code", qrcode)
-                            .AddWithValue("@serialno", series)
-                            .AddWithValue("@qty", qty)
-                            .AddWithValue("@userin", idno)
-                            .AddWithValue("@datein", datedb)
-                            .AddWithValue("@category", "R")
-                        End With
-                        selectcmd.ExecuteNonQuery()
-                        panelerror.Visible = False
-
+                        'no record
+                        showerror("No record found!")
                     End If
                 Else
                     ' Not virgin
-                    showerror("Resin not Recycled")
+                    showerror("Resin not Virgin")
                 End If
             Else
                 ' Invalid QR code format
@@ -70,8 +59,8 @@ Public Class recycled_IN
             MessageBox.Show(ex.Message)
         Finally
             con.Close()
-            reload("SELECT `partcode`, `serialno`, `qty` FROM `molding_resin` 
-                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='R' and userin='" & idno & "' and datein='" & datedb & "'", datagrid1)
+            reload("SELECT  `partcode`, `serialno`, `qty` FROM `molding_resin` 
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='M' and userout='" & idno & "' and dateout='" & datedb & "'", datagrid1)
             lbl_count2.Text = datagrid1.Rows.Count
         End Try
     End Sub
@@ -107,7 +96,7 @@ Public Class recycled_IN
         End If
     End Sub
 
-    Private Sub recycled_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub mixed_OUT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
