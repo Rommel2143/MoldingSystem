@@ -34,7 +34,6 @@ Partial Class mixed_IN
         Me.lbl_count2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtqr = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -55,14 +54,13 @@ Partial Class mixed_IN
         Me.Guna2GroupBox3.Controls.Add(Me.lbl_count2)
         Me.Guna2GroupBox3.Controls.Add(Me.Label7)
         Me.Guna2GroupBox3.Controls.Add(Me.txtqr)
-        Me.Guna2GroupBox3.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox3.Controls.Add(Me.datagrid1)
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(102, 39)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(97, 43)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(1209, 680)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(1219, 672)
         Me.Guna2GroupBox3.TabIndex = 228
         Me.Guna2GroupBox3.Text = "Scan QR"
         '
@@ -70,10 +68,10 @@ Partial Class mixed_IN
         '
         Me.panelerror.BackColor = System.Drawing.Color.Tomato
         Me.panelerror.Controls.Add(Me.texterror)
-        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelerror.Location = New System.Drawing.Point(0, 661)
+        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelerror.Location = New System.Drawing.Point(0, 40)
         Me.panelerror.Name = "panelerror"
-        Me.panelerror.Size = New System.Drawing.Size(1209, 19)
+        Me.panelerror.Size = New System.Drawing.Size(1219, 19)
         Me.panelerror.TabIndex = 227
         Me.panelerror.Visible = False
         '
@@ -133,29 +131,13 @@ Partial Class mixed_IN
         Me.txtqr.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
-        Me.txtqr.Location = New System.Drawing.Point(29, 55)
+        Me.txtqr.Location = New System.Drawing.Point(29, 79)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan Barcode..."
         Me.txtqr.SelectedText = ""
         Me.txtqr.Size = New System.Drawing.Size(587, 36)
         Me.txtqr.TabIndex = 1
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.SystemColors.HotTrack
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(1119, 0)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(90, 40)
-        Me.Guna2Button2.TabIndex = 209
-        Me.Guna2Button2.Text = "Results"
         '
         'datagrid1
         '
@@ -181,13 +163,13 @@ Partial Class mixed_IN
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(29, 97)
+        Me.datagrid1.Location = New System.Drawing.Point(29, 121)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -201,7 +183,7 @@ Partial Class mixed_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1153, 508)
+        Me.datagrid1.Size = New System.Drawing.Size(1153, 484)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -303,7 +285,6 @@ Partial Class mixed_IN
     Friend WithEvents lbl_count2 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtqr As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label10 As Label

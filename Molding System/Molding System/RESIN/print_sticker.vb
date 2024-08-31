@@ -79,6 +79,11 @@ Public Class print_sticker
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_generate.Click
         Try
+            If category = "" Then
+                MessageBox.Show("Please Select Category")
+                Exit Sub
+            End If
+
             con.Close()
             con.Open()
             Dim selectcmd As New MySqlCommand("SELECT MAX(serialno) FROM molding_resin WHERE resinid=@resinid and category=@category", con)

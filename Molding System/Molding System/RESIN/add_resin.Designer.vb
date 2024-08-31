@@ -23,14 +23,14 @@ Partial Class add_resin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_qty = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.addbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcode = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_qty = New Guna.UI2.WinForms.Guna2NumericUpDown()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.txt_qty, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +51,58 @@ Partial Class add_resin
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(504, 447)
         Me.Panel1.TabIndex = 185
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(33, 250)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 21)
+        Me.Label3.TabIndex = 235
+        Me.Label3.Text = "Kg/ Sack"
+        '
+        'txt_qty
+        '
+        Me.txt_qty.BackColor = System.Drawing.Color.Transparent
+        Me.txt_qty.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_qty.Location = New System.Drawing.Point(37, 274)
+        Me.txt_qty.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
+        Me.txt_qty.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_qty.Name = "txt_qty"
+        Me.txt_qty.Size = New System.Drawing.Size(117, 36)
+        Me.txt_qty.TabIndex = 234
+        Me.txt_qty.Value = New Decimal(New Integer() {25, 0, 0, 0})
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(33, 89)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(84, 21)
+        Me.Label2.TabIndex = 185
+        Me.Label2.Text = "Resin Type"
+        '
+        'cmb_type
+        '
+        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_type.DropDownHeight = 300
+        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_type.IntegralHeight = False
+        Me.cmb_type.ItemHeight = 30
+        Me.cmb_type.Location = New System.Drawing.Point(37, 113)
+        Me.cmb_type.Name = "cmb_type"
+        Me.cmb_type.Size = New System.Drawing.Size(140, 36)
+        Me.cmb_type.TabIndex = 184
         '
         'addbtn
         '
@@ -109,56 +161,6 @@ Partial Class add_resin
         Me.txtcode.SelectedText = ""
         Me.txtcode.Size = New System.Drawing.Size(431, 30)
         Me.txtcode.TabIndex = 181
-        '
-        'cmb_type
-        '
-        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Location = New System.Drawing.Point(37, 113)
-        Me.cmb_type.Name = "cmb_type"
-        Me.cmb_type.Size = New System.Drawing.Size(140, 36)
-        Me.cmb_type.TabIndex = 184
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(33, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 21)
-        Me.Label2.TabIndex = 185
-        Me.Label2.Text = "Resin Type"
-        '
-        'txt_qty
-        '
-        Me.txt_qty.BackColor = System.Drawing.Color.Transparent
-        Me.txt_qty.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_qty.Location = New System.Drawing.Point(37, 274)
-        Me.txt_qty.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
-        Me.txt_qty.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txt_qty.Name = "txt_qty"
-        Me.txt_qty.Size = New System.Drawing.Size(117, 36)
-        Me.txt_qty.TabIndex = 234
-        Me.txt_qty.Value = New Decimal(New Integer() {25, 0, 0, 0})
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(33, 250)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 21)
-        Me.Label3.TabIndex = 235
-        Me.Label3.Text = "Kg/ Sack"
         '
         'add_resin
         '

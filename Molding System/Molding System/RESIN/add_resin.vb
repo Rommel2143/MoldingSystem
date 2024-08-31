@@ -16,6 +16,8 @@ Public Class add_resin
                                            VALUES ('" & cmb_type.Text & "','" & txtcode.Text & "','" & txt_qty.Value & "')", con)
 
             selectcmd.ExecuteNonQuery()
+            MessageBox.Show("Partcode Successfully Added!")
+            print_sticker.Close()
         End If
 
     End Sub

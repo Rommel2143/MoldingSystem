@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -314,6 +314,12 @@
     <Compile Include="RESIN\virgin_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RESIN\virgin_return.Designer.vb">
+      <DependentUpon>virgin_return.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\virgin_return.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\virgin_OUT.resx">
       <DependentUpon>virgin_OUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\virgin_return.resx">
+      <DependentUpon>virgin_return.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

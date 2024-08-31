@@ -114,8 +114,8 @@ Partial Class recycled_OUT
         '
         Me.panelerror.BackColor = System.Drawing.Color.Tomato
         Me.panelerror.Controls.Add(Me.texterror)
-        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelerror.Location = New System.Drawing.Point(0, 661)
+        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelerror.Location = New System.Drawing.Point(0, 40)
         Me.panelerror.Name = "panelerror"
         Me.panelerror.Size = New System.Drawing.Size(1209, 19)
         Me.panelerror.TabIndex = 227

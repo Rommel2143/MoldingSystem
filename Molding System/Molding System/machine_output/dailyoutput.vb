@@ -116,8 +116,7 @@ Public Class dailyoutput
                                                         VALUES ('" & cmbmachine.Text & "','" & cmbmaterial.Text & "','" & txtqr.Text & "','" & datedb & "','" & Date.Now.ToString("HH:mm") & "','" & lotno & "','" & qty & "','" & remarks & "','" & txtbox.Text & "','" & txtshift.Text & "','" & txtuser.Text & "','" & itemstatus & "','" & txtcode.Text & "','" & txtmold.Text & "')", con)
             cmdinsert.ExecuteNonQuery()
 
-            '1: SELECT TOTAL STOCK ON PARTCODE
-            add_to_stock_wip()
+
             '2 : SAVE DATA TO INVENTORY SYSTEM 
             insert_to_inventory_fg_scan_WIP()
             refreshgrid()
@@ -205,36 +204,12 @@ Public Class dailyoutput
         End Try
 
     End Sub
-    Private Sub add_to_stock_wip()
-        Try
-            con.Close()
-            con.Open()
-            Dim cmdupdate As New MySqlCommand("UPDATE `inventory_fg_masterlist` SET `wipstock`= (`wipstock`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
-            cmdupdate.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
-    End Sub
 
-    Private Sub add_to_stock_FG()
-        Try
-            con.Close()
-            con.Open()
-            Dim cmdupdate As New MySqlCommand("UPDATE `inventory_fg_masterlist` SET `stockF1`= (`stockF1`+" & qty & ") WHERE `partcode`='" & txtcode.Text & "'", con)
-            cmdupdate.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
-    End Sub
     Private Sub saveqrFG()
         Try
 
             '2 : SAVE DATA TO INVENTORY SYSTEM
-            add_to_stock_FG()
+
 
             insert_to_inventory_fg_scan_FG()
             '3 : INSERT DATA TO MOLDING DAILY

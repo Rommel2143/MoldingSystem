@@ -60,7 +60,7 @@ Public Class mixed_OUT
         Finally
             con.Close()
             reload("SELECT  `partcode`, `serialno`, `qty` FROM `molding_resin` 
-                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='M' and userout='" & idno & "' and dateout='" & datedb & "'", datagrid1)
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='M' and userout='" & idno & "' and dateout='" & datedb & "' ORDER by molding_resin.id DESC", datagrid1)
             lbl_count2.Text = datagrid1.Rows.Count
         End Try
     End Sub

@@ -74,7 +74,7 @@ Partial Class mixed_OUT
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(35, 52)
+        Me.Label2.Location = New System.Drawing.Point(26, 73)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 17)
         Me.Label2.TabIndex = 231
@@ -84,8 +84,8 @@ Partial Class mixed_OUT
         '
         Me.panelerror.BackColor = System.Drawing.Color.Tomato
         Me.panelerror.Controls.Add(Me.texterror)
-        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelerror.Location = New System.Drawing.Point(0, 661)
+        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelerror.Location = New System.Drawing.Point(0, 40)
         Me.panelerror.Name = "panelerror"
         Me.panelerror.Size = New System.Drawing.Size(1209, 19)
         Me.panelerror.TabIndex = 227
@@ -147,7 +147,7 @@ Partial Class mixed_OUT
         Me.txtqr.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
-        Me.txtqr.Location = New System.Drawing.Point(38, 72)
+        Me.txtqr.Location = New System.Drawing.Point(29, 93)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan Barcode..."
@@ -201,7 +201,7 @@ Partial Class mixed_OUT
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(29, 143)
+        Me.datagrid1.Location = New System.Drawing.Point(29, 157)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -215,7 +215,7 @@ Partial Class mixed_OUT
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1153, 462)
+        Me.datagrid1.Size = New System.Drawing.Size(1153, 448)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing

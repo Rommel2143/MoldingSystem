@@ -66,7 +66,7 @@ Public Class machine_frame
         display_form(addmold)
     End Sub
 
-    Private Sub MasterlistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterlistToolStripMenuItem.Click
+    Private Sub MasterlistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_machine.Click
 
     End Sub
 
@@ -109,5 +109,9 @@ Public Class machine_frame
 
     Private Sub AddItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddItemToolStripMenuItem.Click
         display_formscan(add_resin)
+    End Sub
+
+    Private Sub UpdateVersionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateVersionToolStripMenuItem.Click
+
     End Sub
 End Class

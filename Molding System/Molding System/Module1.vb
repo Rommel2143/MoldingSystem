@@ -22,6 +22,7 @@ Module Module1
     Public PCmac As String = GetMacAddress()
     Public PClocation As String = "U1-4"
 
+
     Public date1 As String = Date.Now.ToString("MMMM-dd-yyyy")
     Public datedb As String = Date.Now.ToString("yyyy-MM-dd")
     Public shift1 As String

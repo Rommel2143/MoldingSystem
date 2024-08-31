@@ -63,9 +63,18 @@ Public Class Login
                 If dr.Read = True Then
                     fname = dr("fullname").ToString
                     idno = dr("IDno").ToString
+                    Select Case dr.GetString("designation")
+                        Case "RS"
+                            machine_frame.btn_resin.Enabled = True
+                            machine_frame.btn_machine.Enabled = False
+                        Case "SM"
+                            machine_frame.btn_resin.Enabled = False
+                            machine_frame.btn_machine.Enabled = True
+
+                    End Select
+
                     display_form(machine_frame)
                     machine_frame.userstrip.Text = fname
-
                     labelerror.Visible = False
                 Else
                     noid()

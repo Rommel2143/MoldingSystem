@@ -31,11 +31,12 @@ Public Class virgin_IN
                         Dim status As Integer = dr.GetInt32("status")
                         Select Case status
                             Case 0
-                                showerror("Status: OUT")
+                                showerror("Status : OUT")
                             Case 1
                                 ' Duplicate found
                                 showduplicate("Serial already scanned!")
-
+                            Case 3
+                                showerror("Status : For Mixing")
                         End Select
                     Else
                             con.Close()
@@ -72,7 +73,7 @@ Public Class virgin_IN
         Finally
             con.Close()
             reload("SELECT  `partcode`, `serialno`, `qty` FROM `molding_resin` 
-                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='V' and userin='" & idno & "' and datein='" & datedb & "'", datagrid1)
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='V' and userin='" & idno & "' and datein='" & datedb & "' ORDER by molding_resin.id DESC", datagrid1)
             lbl_count2.Text = datagrid1.Rows.Count
         End Try
     End Sub
@@ -108,19 +109,7 @@ Public Class virgin_IN
         End If
     End Sub
 
-    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
-
-    End Sub
-
-    Private Sub virgin_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub datagrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellContentClick
-
-    End Sub
-
-    Private Sub Guna2GroupBox3_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox3.Click
+    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class

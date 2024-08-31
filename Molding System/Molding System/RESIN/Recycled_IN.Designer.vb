@@ -70,8 +70,8 @@ Partial Class recycled_IN
         '
         Me.panelerror.BackColor = System.Drawing.Color.Tomato
         Me.panelerror.Controls.Add(Me.texterror)
-        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelerror.Location = New System.Drawing.Point(0, 661)
+        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelerror.Location = New System.Drawing.Point(0, 40)
         Me.panelerror.Name = "panelerror"
         Me.panelerror.Size = New System.Drawing.Size(1209, 19)
         Me.panelerror.TabIndex = 227
@@ -133,12 +133,12 @@ Partial Class recycled_IN
         Me.txtqr.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
-        Me.txtqr.Location = New System.Drawing.Point(29, 55)
+        Me.txtqr.Location = New System.Drawing.Point(29, 74)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan Barcode..."
         Me.txtqr.SelectedText = ""
-        Me.txtqr.Size = New System.Drawing.Size(587, 36)
+        Me.txtqr.Size = New System.Drawing.Size(587, 37)
         Me.txtqr.TabIndex = 1
         '
         'Guna2Button2
@@ -168,7 +168,6 @@ Partial Class recycled_IN
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.datagrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -188,7 +187,7 @@ Partial Class recycled_IN
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(28, 117)
+        Me.datagrid1.Location = New System.Drawing.Point(28, 131)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -202,7 +201,7 @@ Partial Class recycled_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1153, 488)
+        Me.datagrid1.Size = New System.Drawing.Size(1153, 474)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
