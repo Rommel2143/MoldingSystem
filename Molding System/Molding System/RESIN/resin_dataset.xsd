@@ -12,7 +12,7 @@
   <xs:element name="resin_dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="resin_dataset" msprop:Generator_UserDSName="resin_dataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="resin_serial" msprop:Generator_TableClassName="resin_serialDataTable" msprop:Generator_TableVarName="tableresin_serial" msprop:Generator_RowChangedName="resin_serialRowChanged" msprop:Generator_TablePropName="resin_serial" msprop:Generator_RowDeletingName="resin_serialRowDeleting" msprop:Generator_RowChangingName="resin_serialRowChanging" msprop:Generator_RowEvHandlerName="resin_serialRowChangeEventHandler" msprop:Generator_RowDeletedName="resin_serialRowDeleted" msprop:Generator_RowClassName="resin_serialRow" msprop:Generator_UserTableName="resin_serial" msprop:Generator_RowEvArgName="resin_serialRowChangeEvent">
+        <xs:element name="resin_serial" msprop:Generator_TableClassName="resin_serialDataTable" msprop:Generator_TableVarName="tableresin_serial" msprop:Generator_TablePropName="resin_serial" msprop:Generator_RowDeletingName="resin_serialRowDeleting" msprop:Generator_RowChangingName="resin_serialRowChanging" msprop:Generator_RowEvHandlerName="resin_serialRowChangeEventHandler" msprop:Generator_RowDeletedName="resin_serialRowDeleted" msprop:Generator_UserTableName="resin_serial" msprop:Generator_RowChangedName="resin_serialRowChanged" msprop:Generator_RowEvArgName="resin_serialRowChangeEvent" msprop:Generator_RowClassName="resin_serialRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
@@ -20,6 +20,7 @@
               <xs:element name="category" msprop:Generator_ColumnVarNameInTable="columncategory" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_UserColumnName="category" type="xs:string" minOccurs="0" />
               <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:string" minOccurs="0" />
               <xs:element name="qrcode" msprop:Generator_ColumnVarNameInTable="columnqrcode" msprop:Generator_ColumnPropNameInRow="qrcode" msprop:Generator_ColumnPropNameInTable="qrcodeColumn" msprop:Generator_UserColumnName="qrcode" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

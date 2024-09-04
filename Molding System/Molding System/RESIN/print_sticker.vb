@@ -110,13 +110,14 @@ Public Class print_sticker
                 dt_records.Columns.Add("category", GetType(String))
                 dt_records.Columns.Add("number", GetType(String))
                 dt_records.Columns.Add("qrcode", GetType(Byte())) ' Byte array for the QR code image
+                dt_records.Columns.Add("qty", GetType(Decimal))
             End If
 
             dt_records.Rows.Clear()
 
             ' Get the quantity input from txt_qty
-            Dim qty As Integer
-            If Integer.TryParse(txt_qty.Text, qty) Then
+            Dim qty As Decimal
+            If Decimal.TryParse(txt_qty.Text, qty) Then
                 ' Generate rows based on the quantity
                 For i As Integer = newqty + 1 To newqty + qty
                     Dim serial_no As String = $"{resin_id}|{resin_weight}|{category}|{i}"
@@ -126,7 +127,7 @@ Public Class print_sticker
                     Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
 
                     ' Add the data and QR code to the DataTable
-                    dt_records.Rows.Add(serial_no, cmb_resin.Text, category, i, qrImageBytes)
+                    dt_records.Rows.Add(serial_no, cmb_resin.Text, category, i, qrImageBytes, resin_weight)
 
                     ' Also add to the DataGridView for visual confirmation
                     datagrid1.Rows.Add(i, serial_no)

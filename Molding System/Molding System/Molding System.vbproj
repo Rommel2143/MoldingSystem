@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -291,6 +291,10 @@
     <Compile Include="RESIN\recycled_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RESIN\reprint_sticker.Designer.vb">
+      <DependentUpon>reprint_sticker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\reprint_sticker.vb" />
     <Compile Include="RESIN\resin_dashboard.Designer.vb">
       <DependentUpon>resin_dashboard.vb</DependentUpon>
     </Compile>
@@ -376,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\recycled_OUT.resx">
       <DependentUpon>recycled_OUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\reprint_sticker.resx">
+      <DependentUpon>reprint_sticker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\resin_dashboard.resx">
       <DependentUpon>resin_dashboard.vb</DependentUpon>

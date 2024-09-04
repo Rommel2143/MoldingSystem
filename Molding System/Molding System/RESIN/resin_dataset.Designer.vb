@@ -293,6 +293,8 @@ Partial Public Class resin_dataset
         
         Private columnqrcode As Global.System.Data.DataColumn
         
+        Private columnqty As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -369,6 +371,14 @@ Partial Public Class resin_dataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property qtyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnqty
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -405,9 +415,9 @@ Partial Public Class resin_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addresin_serialRow(ByVal serial As String, ByVal partcode As String, ByVal category As String, ByVal number As String, ByVal qrcode() As Byte) As resin_serialRow
+        Public Overloads Function Addresin_serialRow(ByVal serial As String, ByVal partcode As String, ByVal category As String, ByVal number As String, ByVal qrcode() As Byte, ByVal qty As Decimal) As resin_serialRow
             Dim rowresin_serialRow As resin_serialRow = CType(Me.NewRow,resin_serialRow)
-            Dim columnValuesArray() As Object = New Object() {serial, partcode, category, number, qrcode}
+            Dim columnValuesArray() As Object = New Object() {serial, partcode, category, number, qrcode, qty}
             rowresin_serialRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowresin_serialRow)
             Return rowresin_serialRow
@@ -435,6 +445,7 @@ Partial Public Class resin_dataset
             Me.columncategory = MyBase.Columns("category")
             Me.columnnumber = MyBase.Columns("number")
             Me.columnqrcode = MyBase.Columns("qrcode")
+            Me.columnqty = MyBase.Columns("qty")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -450,6 +461,8 @@ Partial Public Class resin_dataset
             MyBase.Columns.Add(Me.columnnumber)
             Me.columnqrcode = New Global.System.Data.DataColumn("qrcode", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqrcode)
+            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnqty)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -671,6 +684,21 @@ Partial Public Class resin_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property qty() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableresin_serial.qtyColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'resin_serial' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableresin_serial.qtyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsserialNull() As Boolean
             Return Me.IsNull(Me.tableresin_serial.serialColumn)
         End Function
@@ -727,6 +755,18 @@ Partial Public Class resin_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetqrcodeNull()
             Me(Me.tableresin_serial.qrcodeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsqtyNull() As Boolean
+            Return Me.IsNull(Me.tableresin_serial.qtyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetqtyNull()
+            Me(Me.tableresin_serial.qtyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

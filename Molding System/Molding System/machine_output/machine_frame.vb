@@ -114,4 +114,8 @@ Public Class machine_frame
     Private Sub UpdateVersionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateVersionToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub ReturnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnToolStripMenuItem.Click
+        display_formscan(virgin_return)
+    End Sub
 End Class

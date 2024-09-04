@@ -112,4 +112,8 @@ Public Class virgin_IN
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub txtqr_TextChanged_1(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
+    End Sub
 End Class
