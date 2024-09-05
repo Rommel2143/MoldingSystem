@@ -89,8 +89,8 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Google.Protobuf, Version=3.27.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.27.3\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.28.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.28.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
@@ -267,10 +267,10 @@
     <Compile Include="RESIN\mixed_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RESIN\print_qr.vb">
+    <Compile Include="RESIN\printsticker.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>print_qr.rpt</DependentUpon>
+      <DependentUpon>printsticker.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RESIN\print_sticker.Designer.vb">
@@ -368,9 +368,9 @@
     <EmbeddedResource Include="RESIN\mixed_OUT.resx">
       <DependentUpon>mixed_OUT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RESIN\print_qr.rpt">
+    <EmbeddedResource Include="RESIN\printsticker.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>print_qr.vb</LastGenOutput>
+      <LastGenOutput>printsticker.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\print_sticker.resx">
       <DependentUpon>print_sticker.vb</DependentUpon>

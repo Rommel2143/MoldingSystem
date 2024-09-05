@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class print_qr
+Public Class printsticker
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class print_qr
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "print_qr.rpt"
+            Return "printsticker.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class print_qr
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Molding_System.print_qr.rpt"
+            Return "Molding_System.printsticker.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class print_qr
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class Cachedprint_qr
+Public Class Cachedprintsticker
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class Cachedprint_qr
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As print_qr = New print_qr()
+        Dim rpt As printsticker = New printsticker()
         rpt.Site = Me.Site
         Return rpt
     End Function

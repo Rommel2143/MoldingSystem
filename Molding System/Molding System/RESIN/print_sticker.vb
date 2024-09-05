@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports QRCoder
 Imports System.IO
+Imports CrystalDecisions.CrystalReports
 Public Class print_sticker
     Dim category As String
     Dim dt_records As New DataTable
@@ -18,7 +19,7 @@ Public Class print_sticker
 
     Private Sub loadrpt()
         'Dim myrpt As New print_serial
-        Dim myrpt As New print_qr
+        Dim myrpt As New printsticker
         ' Check if dt_records contains data
         If dt_records Is Nothing OrElse dt_records.Rows.Count = 0 Then
             MessageBox.Show("No data available for the report.")
