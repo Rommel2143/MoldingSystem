@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class print_sticker
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,311 +20,132 @@ Partial Class print_sticker
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(print_sticker))
-        Me.cmb_resin = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_generate = New Guna.UI2.WinForms.Guna2Button()
-        Me.cmb_category = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_qty = New Guna.UI2.WinForms.Guna2NumericUpDown()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
-        CType(Me.txt_qty, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel2.SuspendLayout()
+        Me.tabcontrol1 = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.tab_virgin = New System.Windows.Forms.TabPage()
+        Me.panel_virgin = New Guna.UI2.WinForms.Guna2Panel()
+        Me.tab_recycle = New System.Windows.Forms.TabPage()
+        Me.panel_recycle = New Guna.UI2.WinForms.Guna2Panel()
+        Me.tab_mixed = New System.Windows.Forms.TabPage()
+        Me.panel_mixed = New System.Windows.Forms.Panel()
+        Me.tabcontrol1.SuspendLayout()
+        Me.tab_virgin.SuspendLayout()
+        Me.tab_recycle.SuspendLayout()
+        Me.tab_mixed.SuspendLayout()
         Me.SuspendLayout()
         '
-        'cmb_resin
+        'tabcontrol1
         '
-        Me.cmb_resin.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_resin.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_resin.DropDownHeight = 300
-        Me.cmb_resin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_resin.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_resin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_resin.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_resin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_resin.IntegralHeight = False
-        Me.cmb_resin.ItemHeight = 30
-        Me.cmb_resin.Location = New System.Drawing.Point(36, 118)
-        Me.cmb_resin.MaxDropDownItems = 5
-        Me.cmb_resin.Name = "cmb_resin"
-        Me.cmb_resin.Size = New System.Drawing.Size(569, 36)
-        Me.cmb_resin.TabIndex = 0
+        Me.tabcontrol1.Controls.Add(Me.tab_virgin)
+        Me.tabcontrol1.Controls.Add(Me.tab_recycle)
+        Me.tabcontrol1.Controls.Add(Me.tab_mixed)
+        Me.tabcontrol1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tabcontrol1.ItemSize = New System.Drawing.Size(180, 40)
+        Me.tabcontrol1.Location = New System.Drawing.Point(0, 0)
+        Me.tabcontrol1.Name = "tabcontrol1"
+        Me.tabcontrol1.SelectedIndex = 0
+        Me.tabcontrol1.Size = New System.Drawing.Size(1444, 836)
+        Me.tabcontrol1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
+        Me.tabcontrol1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.tabcontrol1.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.tabcontrol1.TabButtonHoverState.ForeColor = System.Drawing.Color.White
+        Me.tabcontrol1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.tabcontrol1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty
+        Me.tabcontrol1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.tabcontrol1.TabButtonIdleState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.tabcontrol1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.tabcontrol1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.tabcontrol1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty
+        Me.tabcontrol1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.tabcontrol1.TabButtonSelectedState.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tabcontrol1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
+        Me.tabcontrol1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tabcontrol1.TabButtonSize = New System.Drawing.Size(180, 40)
+        Me.tabcontrol1.TabIndex = 0
+        Me.tabcontrol1.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.tabcontrol1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
-        'Label3
+        'tab_virgin
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(33, 102)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 13)
-        Me.Label3.TabIndex = 150
-        Me.Label3.Text = " Resin Code :"
+        Me.tab_virgin.Controls.Add(Me.panel_virgin)
+        Me.tab_virgin.Location = New System.Drawing.Point(4, 44)
+        Me.tab_virgin.Name = "tab_virgin"
+        Me.tab_virgin.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_virgin.Size = New System.Drawing.Size(1436, 788)
+        Me.tab_virgin.TabIndex = 0
+        Me.tab_virgin.Text = "Virgin"
+        Me.tab_virgin.UseVisualStyleBackColor = True
         '
-        'datagrid1
+        'panel_virgin
         '
-        Me.datagrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.datagrid1.ColumnHeadersHeight = 35
-        Me.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.datagrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 0)
-        Me.datagrid1.Name = "datagrid1"
-        Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.datagrid1.RowHeadersVisible = False
-        Me.datagrid1.RowTemplate.Height = 36
-        Me.datagrid1.Size = New System.Drawing.Size(305, 620)
-        Me.datagrid1.TabIndex = 2
-        Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.datagrid1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.datagrid1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.datagrid1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.datagrid1.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.datagrid1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.datagrid1.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datagrid1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.datagrid1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.datagrid1.ThemeStyle.HeaderStyle.Height = 35
-        Me.datagrid1.ThemeStyle.ReadOnly = False
-        Me.datagrid1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.datagrid1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.datagrid1.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datagrid1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.datagrid1.ThemeStyle.RowsStyle.Height = 36
-        Me.datagrid1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.panel_virgin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel_virgin.Location = New System.Drawing.Point(3, 3)
+        Me.panel_virgin.Name = "panel_virgin"
+        Me.panel_virgin.Size = New System.Drawing.Size(1430, 782)
+        Me.panel_virgin.TabIndex = 0
         '
-        'Column2
+        'tab_recycle
         '
-        Me.Column2.FillWeight = 80.95028!
-        Me.Column2.HeaderText = "No."
-        Me.Column2.Name = "Column2"
+        Me.tab_recycle.Controls.Add(Me.panel_recycle)
+        Me.tab_recycle.Location = New System.Drawing.Point(4, 44)
+        Me.tab_recycle.Name = "tab_recycle"
+        Me.tab_recycle.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_recycle.Size = New System.Drawing.Size(1436, 788)
+        Me.tab_recycle.TabIndex = 1
+        Me.tab_recycle.Text = "Recycle"
+        Me.tab_recycle.UseVisualStyleBackColor = True
         '
-        'Column1
+        'panel_recycle
         '
-        Me.Column1.FillWeight = 118.3898!
-        Me.Column1.HeaderText = "Serial Code"
-        Me.Column1.Name = "Column1"
+        Me.panel_recycle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel_recycle.Location = New System.Drawing.Point(3, 3)
+        Me.panel_recycle.Name = "panel_recycle"
+        Me.panel_recycle.Size = New System.Drawing.Size(1430, 782)
+        Me.panel_recycle.TabIndex = 1
         '
-        'Guna2Panel1
+        'tab_mixed
         '
-        Me.Guna2Panel1.Controls.Add(Me.CrystalReportViewer1)
-        Me.Guna2Panel1.Controls.Add(Me.datagrid1)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 192)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1330, 620)
-        Me.Guna2Panel1.TabIndex = 0
+        Me.tab_mixed.Controls.Add(Me.panel_mixed)
+        Me.tab_mixed.Location = New System.Drawing.Point(4, 44)
+        Me.tab_mixed.Name = "tab_mixed"
+        Me.tab_mixed.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_mixed.Size = New System.Drawing.Size(1436, 788)
+        Me.tab_mixed.TabIndex = 2
+        Me.tab_mixed.Text = "Mixed"
+        Me.tab_mixed.UseVisualStyleBackColor = True
         '
-        'CrystalReportViewer1
+        'panel_mixed
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(305, 0)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1025, 620)
-        Me.CrystalReportViewer1.TabIndex = 151
-        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(485, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 13)
-        Me.Label1.TabIndex = 151
-        Me.Label1.Text = "Sack Qty :"
-        '
-        'cmb_type
-        '
-        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_type.DropDownHeight = 300
-        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_type.IntegralHeight = False
-        Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Location = New System.Drawing.Point(36, 50)
-        Me.cmb_type.MaxDropDownItems = 5
-        Me.cmb_type.Name = "cmb_type"
-        Me.cmb_type.Size = New System.Drawing.Size(167, 36)
-        Me.cmb_type.TabIndex = 153
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(33, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 13)
-        Me.Label2.TabIndex = 154
-        Me.Label2.Text = " Resin Type :"
-        '
-        'btn_generate
-        '
-        Me.btn_generate.Animated = True
-        Me.btn_generate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_generate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_generate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_generate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_generate.FillColor = System.Drawing.SystemColors.HotTrack
-        Me.btn_generate.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_generate.ForeColor = System.Drawing.Color.White
-        Me.btn_generate.Image = CType(resources.GetObject("btn_generate.Image"), System.Drawing.Image)
-        Me.btn_generate.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btn_generate.Location = New System.Drawing.Point(626, 50)
-        Me.btn_generate.Name = "btn_generate"
-        Me.btn_generate.Size = New System.Drawing.Size(108, 104)
-        Me.btn_generate.TabIndex = 155
-        Me.btn_generate.Text = "Generate Serial"
-        '
-        'cmb_category
-        '
-        Me.cmb_category.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_category.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_category.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_category.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_category.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_category.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_category.ItemHeight = 30
-        Me.cmb_category.Items.AddRange(New Object() {"Virgin", "Recycled", "Mixed"})
-        Me.cmb_category.Location = New System.Drawing.Point(260, 50)
-        Me.cmb_category.Name = "cmb_category"
-        Me.cmb_category.Size = New System.Drawing.Size(167, 36)
-        Me.cmb_category.TabIndex = 156
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(257, 34)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 13)
-        Me.Label4.TabIndex = 157
-        Me.Label4.Text = " Category :"
-        '
-        'txt_qty
-        '
-        Me.txt_qty.BackColor = System.Drawing.Color.Transparent
-        Me.txt_qty.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_qty.Location = New System.Drawing.Point(488, 50)
-        Me.txt_qty.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txt_qty.Name = "txt_qty"
-        Me.txt_qty.Size = New System.Drawing.Size(117, 36)
-        Me.txt_qty.TabIndex = 233
-        Me.txt_qty.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.Controls.Add(Me.txt_qty)
-        Me.Guna2Panel2.Controls.Add(Me.cmb_category)
-        Me.Guna2Panel2.Controls.Add(Me.Label4)
-        Me.Guna2Panel2.Controls.Add(Me.btn_generate)
-        Me.Guna2Panel2.Controls.Add(Me.cmb_type)
-        Me.Guna2Panel2.Controls.Add(Me.Label2)
-        Me.Guna2Panel2.Controls.Add(Me.Label1)
-        Me.Guna2Panel2.Controls.Add(Me.cmb_resin)
-        Me.Guna2Panel2.Controls.Add(Me.Label3)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1330, 192)
-        Me.Guna2Panel2.TabIndex = 234
+        Me.panel_mixed.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel_mixed.Location = New System.Drawing.Point(3, 3)
+        Me.panel_mixed.Name = "panel_mixed"
+        Me.panel_mixed.Size = New System.Drawing.Size(1430, 782)
+        Me.panel_mixed.TabIndex = 0
         '
         'print_sticker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1330, 812)
-        Me.Controls.Add(Me.Guna2Panel1)
-        Me.Controls.Add(Me.Guna2Panel2)
+        Me.ClientSize = New System.Drawing.Size(1444, 836)
+        Me.Controls.Add(Me.tabcontrol1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "print_sticker"
         Me.Text = "print_sticker"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
-        CType(Me.txt_qty, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel2.ResumeLayout(False)
-        Me.Guna2Panel2.PerformLayout()
+        Me.tabcontrol1.ResumeLayout(False)
+        Me.tab_virgin.ResumeLayout(False)
+        Me.tab_recycle.ResumeLayout(False)
+        Me.tab_mixed.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents cmb_resin As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btn_generate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cmb_category As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txt_qty As Guna.UI2.WinForms.Guna2NumericUpDown
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents tabcontrol1 As Guna.UI2.WinForms.Guna2TabControl
+    Friend WithEvents tab_virgin As TabPage
+    Friend WithEvents tab_recycle As TabPage
+    Friend WithEvents tab_mixed As TabPage
+    Friend WithEvents panel_virgin As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panel_recycle As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panel_mixed As Panel
 End Class

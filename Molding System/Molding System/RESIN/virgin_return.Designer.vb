@@ -130,9 +130,9 @@ Partial Class virgin_return
         Me.Label1.ForeColor = System.Drawing.Color.Gray
         Me.Label1.Location = New System.Drawing.Point(36, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(24, 17)
+        Me.Label1.Size = New System.Drawing.Size(89, 17)
         Me.Label1.TabIndex = 242
-        Me.Label1.Text = "Kg"
+        Me.Label1.Text = "Kg Remaining"
         '
         'txt_qty
         '

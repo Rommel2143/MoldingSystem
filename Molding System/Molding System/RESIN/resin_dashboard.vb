@@ -7,6 +7,23 @@ Public Class resin_dashboard
     Private Sub resin_dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker_resindelivery.Value = Date.Now
         dtpicker_used.Value = Date.Now
+
+    End Sub
+
+    Public Sub loaddata()
+        reload("SELECT rm.partcode, SUM(rs.qty) AS Total_Kg FROM molding_resin rs
+                 JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
+                WHERE rs.category='V' and rs.status='1'
+                GROUP BY rm.partcode ORDER BY Total_Kg DESC", datagrid_stock_virgin)
+        reload("SELECT rm.partcode, SUM(rs.qty) AS Total_Kg FROM molding_resin rs
+                 JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
+                WHERE rs.category='R' and rs.status='1'
+                GROUP BY rm.partcode ORDER BY Total_Kg DESC", datagrid_stock_recycled)
+        reload("SELECT rm.partcode, SUM(rs.qty) AS Total_Kg FROM molding_resin rs
+                 JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
+                WHERE rs.category='M' and rs.status='1'
+                GROUP BY rm.partcode ORDER BY Total_Kg DESC", datagrid_stock_mixed)
+
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_export.Click
@@ -75,37 +92,35 @@ Public Class resin_dashboard
     End Sub
 
     Private Sub dtpicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker_resindelivery.ValueChanged
-        reload("SELECT rm.partcode, COUNT(rs.id), SUM(rs.qty) AS Sack FROM molding_resin rs
+        reload("SELECT rm.partcode, COUNT(rs.id) AS count, SUM(rs.qty) AS Sack FROM molding_resin rs
                  JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
                   WHERE rs.datein ='" & dtpicker_resindelivery.Value.ToString("yyyy-MM-dd") & "' and category='V'
-                GROUP BY rs.resinid", datagrid_delivery)
+                GROUP BY rs.resinid ORDER BY count DESC", datagrid_delivery)
     End Sub
 
-    Private Sub cmb_stock_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_stock.SelectedIndexChanged
 
-        Select Case cmb_stock.Text
-            Case "Virgin"
-                selected_category = "V"
-            Case "Recycled"
-                selected_category = "R"
-            Case "Mixed"
-                selected_category = "M"
-        End Select
-        reload("SELECT rm.partcode, SUM(rs.qty) AS Total_Kg FROM molding_resin rs
-                 JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
-                WHERE rs.category='" & selected_category & "' and rs.status='1'
-                GROUP BY rm.partcode", datagrid_stock)
-
-    End Sub
 
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        savetoPDF(datagrid_stock, "Resin Stock(" & cmb_stock.Text & ")")
+        savetoPDF(datagrid_stock_virgin, "Resin Stock (Virgin) ")
     End Sub
 
     Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpicker_used.ValueChanged
         reload("SELECT rm.partcode, sum(rs.qty) AS Total FROM molding_resin rs
                  JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
-                  WHERE rs.datein ='" & dtpicker_used.Value.ToString("yyyy-MM-dd") & "' and rs.status='0' and (rs.category='V' or rs.category='M')
-                GROUP BY rs.resinid", datagrid_used)
+                  WHERE rs.dateout ='" & dtpicker_used.Value.ToString("yyyy-MM-dd") & "' and rs.status='0' and rs.category='M'
+                GROUP BY rs.resinid ORDER BY Total DESC", datagrid_used_mixed)
+
+        reload("SELECT rm.partcode, sum(rs.qty) AS Total FROM molding_resin rs
+                 JOIN molding_resin_masterlist rm ON rm.id=rs.resinid
+                  WHERE rs.dateout ='" & dtpicker_used.Value.ToString("yyyy-MM-dd") & "' and rs.status='0' and rs.category='V'
+                GROUP BY rs.resinid ORDER BY Total DESC ", datagrid_used_virgin)
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        savetoPDF(datagrid_stock_recycled, "Resin Stock (Recycled) ")
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        savetoPDF(datagrid_stock_mixed, "Resin Stock (Mixed) ")
     End Sub
 End Class

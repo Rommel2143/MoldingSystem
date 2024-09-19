@@ -76,6 +76,7 @@ Public Class machine_frame
 
     Private Sub DashboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DashboardToolStripMenuItem.Click
         display_formscan(resin_dashboard)
+        resin_dashboard.loaddata()
     End Sub
 
 
@@ -117,5 +118,9 @@ Public Class machine_frame
 
     Private Sub ReturnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnToolStripMenuItem.Click
         display_formscan(virgin_return)
+    End Sub
+
+    Private Sub Guna2PictureBox2_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox2.Click
+        error_panel.Visible = False
     End Sub
 End Class

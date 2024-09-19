@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class virgin_IN
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class virgin_IN
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(virgin_IN))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -38,15 +38,12 @@ Partial Class virgin_IN
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.txtqr = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.panelerror = New Guna.UI2.WinForms.Guna2Panel()
-        Me.texterror = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
-        Me.panelerror.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_count2
@@ -126,7 +123,6 @@ Partial Class virgin_IN
         Me.Guna2Panel1.Controls.Add(Me.datagrid1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel4)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel3)
-        Me.Guna2Panel1.Controls.Add(Me.panelerror)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 20)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -164,7 +160,7 @@ Partial Class virgin_IN
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 88)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 69)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -178,7 +174,7 @@ Partial Class virgin_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1350, 637)
+        Me.datagrid1.Size = New System.Drawing.Size(1350, 656)
         Me.datagrid1.TabIndex = 230
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -216,7 +212,7 @@ Partial Class virgin_IN
         '
         Me.Guna2Panel3.Controls.Add(Me.txtqr)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.Size = New System.Drawing.Size(1350, 69)
         Me.Guna2Panel3.TabIndex = 231
@@ -241,29 +237,6 @@ Partial Class virgin_IN
         Me.txtqr.Size = New System.Drawing.Size(587, 36)
         Me.txtqr.TabIndex = 229
         '
-        'panelerror
-        '
-        Me.panelerror.BackColor = System.Drawing.Color.Tomato
-        Me.panelerror.Controls.Add(Me.texterror)
-        Me.panelerror.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelerror.Location = New System.Drawing.Point(0, 0)
-        Me.panelerror.Name = "panelerror"
-        Me.panelerror.Size = New System.Drawing.Size(1350, 19)
-        Me.panelerror.TabIndex = 228
-        Me.panelerror.Visible = False
-        '
-        'texterror
-        '
-        Me.texterror.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.texterror.AutoSize = True
-        Me.texterror.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.texterror.ForeColor = System.Drawing.Color.White
-        Me.texterror.Location = New System.Drawing.Point(567, -2)
-        Me.texterror.Name = "texterror"
-        Me.texterror.Size = New System.Drawing.Size(74, 21)
-        Me.texterror.TabIndex = 203
-        Me.texterror.Text = "INVALID"
-        '
         'virgin_IN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -282,8 +255,6 @@ Partial Class virgin_IN
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel4.PerformLayout()
         Me.Guna2Panel3.ResumeLayout(False)
-        Me.panelerror.ResumeLayout(False)
-        Me.panelerror.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,6 +269,4 @@ Partial Class virgin_IN
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents txtqr As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents panelerror As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents texterror As Label
 End Class

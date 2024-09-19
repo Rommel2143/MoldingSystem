@@ -17,7 +17,7 @@ Public Class add_resin
 
             selectcmd.ExecuteNonQuery()
             MessageBox.Show("Partcode Successfully Added!")
-            print_sticker.Close()
+            print_sticker_virgin.Close()
         End If
 
     End Sub

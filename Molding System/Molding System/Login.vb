@@ -2,6 +2,8 @@
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+
+
             txtpcname.Text = PCname
             txtpcmac.Text = PCmac
 
@@ -20,13 +22,7 @@ Public Class Login
 
                 If result = DialogResult.OK Then
                     display_form(Register_PC)
-                    'With Register_PC
-                    '    .Refresh()
-                    '    .TopLevel = False
-                    '    Inventory_Mainframe.Panel1.Controls.Add(Register_PC)
-                    '    .BringToFront()
-                    '    .Show()
-                    'End With
+
                 ElseIf result = DialogResult.Cancel Then
                     con.Close()
                     Application.Exit()

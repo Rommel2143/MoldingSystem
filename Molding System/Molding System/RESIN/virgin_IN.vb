@@ -31,12 +31,12 @@ Public Class virgin_IN
                         Dim status As Integer = dr.GetInt32("status")
                         Select Case status
                             Case 0
-                                showerror("Status : OUT")
+                                display_error("Status : OUT")
                             Case 1
                                 ' Duplicate found
-                                showduplicate("Serial already scanned!")
+                                display_error("Serial already scanned!")
                             Case 3
-                                showerror("Status : For Mixing")
+                                display_error("Status : For Mixing")
                         End Select
                     Else
                             con.Close()
@@ -55,17 +55,17 @@ Public Class virgin_IN
                             .AddWithValue("@category", "V")
                         End With
                         selectcmd.ExecuteNonQuery()
-                        panelerror.Visible = False
+                        machine_frame.error_panel.Visible = False
 
 
                     End If
                 Else
                     ' Not virgin
-                    showerror("Resin not Virgin")
+                    display_error("Resin not Virgin")
                 End If
             Else
                 ' Invalid QR code format
-                showerror("Invalid QR! Expected 4 parts but got " & parts.Length)
+                display_error("Invalid QR! Expected 4 parts but got " & parts.Length)
                 con.Close()
             End If
         Catch ex As Exception
@@ -79,41 +79,15 @@ Public Class virgin_IN
     End Sub
 
 
-    Private Sub showerror(text As String)
-        Try
-            texterror.Text = text
-            panelerror.Visible = True
-            sounderror()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
-    Private Sub showduplicate(text As String)
-        Try
-            texterror.Text = text
-            panelerror.Visible = True
-            soundduplicate()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
 
     Private Sub txtqr_matrix_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
             processQRcode(txtqr.Text)
-
-
             txtqr.Clear()
         End If
     End Sub
 
-    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtqr_TextChanged_1(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
 
     End Sub
 End Class
