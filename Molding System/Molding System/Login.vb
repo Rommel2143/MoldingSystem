@@ -59,11 +59,20 @@ Public Class Login
                 If dr.Read = True Then
                     fname = dr("fullname").ToString
                     idno = dr("IDno").ToString
+                    user_level = dr.GetInt32("status")
+                    machine_frame.Panel1.Controls.Clear()
                     Select Case dr.GetString("designation")
                         Case "RS"
+
                             machine_frame.btn_resin.Enabled = True
                             machine_frame.btn_machine.Enabled = False
+                            If user_level = 1 Then
+                                machine_frame.resin_additem.Visible = True
+                            Else
+                                machine_frame.resin_additem.Visible = False
+                            End If
                         Case "SM"
+
                             machine_frame.btn_resin.Enabled = False
                             machine_frame.btn_machine.Enabled = True
 

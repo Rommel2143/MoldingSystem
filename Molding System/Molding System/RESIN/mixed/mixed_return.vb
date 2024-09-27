@@ -1,6 +1,7 @@
 ﻿
+
 Imports MySql.Data.MySqlClient
-Public Class virgin_return
+Public Class mixed_return
 
 
     Private Sub processQRcode(qrcode As String)
@@ -16,7 +17,7 @@ Public Class virgin_return
                 Dim category As String = parts(2).Trim()
                 Dim series As String = parts(3).Trim()
 
-                If category = "V" Then
+                If category = "M" Then
                     con.Close()
                     con.Open()
 
@@ -42,15 +43,14 @@ Public Class virgin_return
                             Case 1
                                 ' Duplicate found
                                 showduplicate("Serial already IN!")
-                            Case 3
-                                showerror("Status : For Mixing")
+
                         End Select
                     Else
                         showerror("No Record Found!")
                     End If
                 Else
                     ' Not virgin
-                    showerror("Resin not Virgin")
+                    showerror("Resin not Mixed")
                 End If
             Else
                 ' Invalid QR code format
@@ -62,7 +62,7 @@ Public Class virgin_return
         Finally
             con.Close()
             reload("SELECT  `partcode`, `serialno`, `qty` FROM `molding_resin` 
-                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='V' and userin='" & idno & "' and datein='" & datedb & "' ORDER by molding_resin.id DESC", datagrid1)
+                    JOIN molding_resin_masterlist rm ON rm.id=resinid WHERE category='M' and userin='" & idno & "' and datein='" & datedb & "' ORDER by molding_resin.id DESC", datagrid1)
             lbl_count2.Text = datagrid1.Rows.Count
         End Try
     End Sub
@@ -103,6 +103,10 @@ Public Class virgin_return
     End Sub
 
     Private Sub txtqr_TextChanged_1(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel3.Paint
 
     End Sub
 End Class

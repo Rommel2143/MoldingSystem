@@ -50,15 +50,16 @@ Partial Class machine_frame
         Me.MIXEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OUTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.resin_additem = New System.Windows.Forms.ToolStripMenuItem()
         Me.error_panel = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_error = New System.Windows.Forms.Label()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.ReturnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.error_panel.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -176,7 +177,7 @@ Partial Class machine_frame
         '
         'btn_resin
         '
-        Me.btn_resin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem, Me.AddItemToolStripMenuItem})
+        Me.btn_resin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem, Me.resin_additem})
         Me.btn_resin.Image = CType(resources.GetObject("btn_resin.Image"), System.Drawing.Image)
         Me.btn_resin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_resin.Name = "btn_resin"
@@ -188,7 +189,7 @@ Partial Class machine_frame
         Me.DashboardToolStripMenuItem.Image = CType(resources.GetObject("DashboardToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.DashboardToolStripMenuItem.Text = "Dashboard"
         '
         'CreateStickerToolStripMenuItem
@@ -196,7 +197,7 @@ Partial Class machine_frame
         Me.CreateStickerToolStripMenuItem.Image = CType(resources.GetObject("CreateStickerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CreateStickerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CreateStickerToolStripMenuItem.Name = "CreateStickerToolStripMenuItem"
-        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.CreateStickerToolStripMenuItem.Text = "Print Serial"
         '
         'ScaninToolStripMenuItem
@@ -205,7 +206,7 @@ Partial Class machine_frame
         Me.ScaninToolStripMenuItem.Image = CType(resources.GetObject("ScaninToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ScaninToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ScaninToolStripMenuItem.Name = "ScaninToolStripMenuItem"
-        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.ScaninToolStripMenuItem.Text = "VIRGIN"
         '
         'INToolStripMenuItem
@@ -232,7 +233,7 @@ Partial Class machine_frame
         Me.RECYCLEDToolStripMenuItem.Image = CType(resources.GetObject("RECYCLEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RECYCLEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RECYCLEDToolStripMenuItem.Name = "RECYCLEDToolStripMenuItem"
-        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.RECYCLEDToolStripMenuItem.Text = "RECYCLED"
         '
         'INToolStripMenuItem2
@@ -249,32 +250,32 @@ Partial Class machine_frame
         '
         'MIXEDToolStripMenuItem
         '
-        Me.MIXEDToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem1, Me.OUTToolStripMenuItem1})
+        Me.MIXEDToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem1, Me.OUTToolStripMenuItem1, Me.ReturnToolStripMenuItem1})
         Me.MIXEDToolStripMenuItem.Image = CType(resources.GetObject("MIXEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MIXEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
-        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.MIXEDToolStripMenuItem.Text = "MIXED"
         '
         'INToolStripMenuItem1
         '
         Me.INToolStripMenuItem1.Name = "INToolStripMenuItem1"
-        Me.INToolStripMenuItem1.Size = New System.Drawing.Size(112, 26)
+        Me.INToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.INToolStripMenuItem1.Text = "IN"
         '
         'OUTToolStripMenuItem1
         '
         Me.OUTToolStripMenuItem1.Name = "OUTToolStripMenuItem1"
-        Me.OUTToolStripMenuItem1.Size = New System.Drawing.Size(112, 26)
+        Me.OUTToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.OUTToolStripMenuItem1.Text = "OUT"
         '
-        'AddItemToolStripMenuItem
+        'resin_additem
         '
-        Me.AddItemToolStripMenuItem.Image = CType(resources.GetObject("AddItemToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AddItemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.AddItemToolStripMenuItem.Name = "AddItemToolStripMenuItem"
-        Me.AddItemToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.AddItemToolStripMenuItem.Text = "Add item"
+        Me.resin_additem.Image = CType(resources.GetObject("resin_additem.Image"), System.Drawing.Image)
+        Me.resin_additem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.resin_additem.Name = "resin_additem"
+        Me.resin_additem.Size = New System.Drawing.Size(196, 38)
+        Me.resin_additem.Text = "Add item"
         '
         'error_panel
         '
@@ -290,6 +291,20 @@ Partial Class machine_frame
         Me.error_panel.Size = New System.Drawing.Size(1208, 27)
         Me.error_panel.TabIndex = 14
         Me.error_panel.Visible = False
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(1187, 7)
+        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(10, 10)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 3
+        Me.Guna2PictureBox2.TabStop = False
         '
         'Guna2PictureBox1
         '
@@ -316,19 +331,11 @@ Partial Class machine_frame
         Me.lbl_error.TabIndex = 0
         Me.lbl_error.Text = "---"
         '
-        'Guna2PictureBox2
+        'ReturnToolStripMenuItem1
         '
-        Me.Guna2PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(1187, 7)
-        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(10, 10)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox2.TabIndex = 3
-        Me.Guna2PictureBox2.TabStop = False
+        Me.ReturnToolStripMenuItem1.Name = "ReturnToolStripMenuItem1"
+        Me.ReturnToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.ReturnToolStripMenuItem1.Text = "Return"
         '
         'machine_frame
         '
@@ -346,8 +353,8 @@ Partial Class machine_frame
         Me.MenuStrip1.PerformLayout()
         Me.error_panel.ResumeLayout(False)
         Me.error_panel.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -377,10 +384,11 @@ Partial Class machine_frame
     Friend WithEvents OUTToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents INToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents OUTToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents AddItemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents resin_additem As ToolStripMenuItem
     Friend WithEvents ReturnToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents error_panel As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents lbl_error As Label
+    Friend WithEvents ReturnToolStripMenuItem1 As ToolStripMenuItem
 End Class

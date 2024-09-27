@@ -108,7 +108,7 @@ Public Class machine_frame
         display_formscan(recycled_OUT)
     End Sub
 
-    Private Sub AddItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddItemToolStripMenuItem.Click
+    Private Sub AddItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles resin_additem.Click
         display_formscan(add_resin)
     End Sub
 
@@ -122,5 +122,9 @@ Public Class machine_frame
 
     Private Sub Guna2PictureBox2_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox2.Click
         error_panel.Visible = False
+    End Sub
+
+    Private Sub ReturnToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReturnToolStripMenuItem1.Click
+        display_formscan(mixed_return)
     End Sub
 End Class

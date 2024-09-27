@@ -37,23 +37,14 @@ Public Class recycled_OUT
                                 ' Duplicate found
                                 showduplicate("Status : OUT")
                             Case 1
-                                If qty_rem = txt_qty.Value Then
-                                    con.Close()
+
+                                con.Close()
                                     con.Open()
                                     ' Insert the new record
                                     Dim updatedata As New MySqlCommand("UPDATE `molding_resin` SET `userout`='" & idno & "', `dateout`='" & datedb & "', `status`='0' WHERE serial_code='" & txtqr.Text & "'", con)
                                     updatedata.ExecuteNonQuery()
                                     panelerror.Visible = False
 
-                                ElseIf qty_rem > txt_qty.Value Then
-                                    con.Close()
-                                    con.Open()
-
-                                    Dim updatedata As New MySqlCommand("UPDATE `molding_resin` SET `userout`='" & idno & "', `dateout`='" & datedb & "', qty='" & qty_rem - txt_qty.Value & "' WHERE serial_code='" & txtqr.Text & "'", con)
-                                    updatedata.ExecuteNonQuery()
-                                Else
-                                    showerror("Qty greater than remaining :" & qty_rem)
-                                End If
                         End Select
                     Else
                         'no record

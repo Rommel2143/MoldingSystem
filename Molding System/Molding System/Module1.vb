@@ -20,6 +20,7 @@ Module Module1
     'credentials for log in
     Public fname As String
     Public idno As String
+    Public user_level As Integer
     Public designation As String
     Public PCname As String = Environment.MachineName
     Public PCmac As String = GetMacAddress()
