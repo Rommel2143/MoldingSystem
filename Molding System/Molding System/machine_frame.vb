@@ -127,4 +127,8 @@ Public Class machine_frame
     Private Sub ReturnToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReturnToolStripMenuItem1.Click
         display_formscan(mixed_return)
     End Sub
+
+    Private Sub DensoLabelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DensoLabelToolStripMenuItem.Click
+        display_formscan(print_label)
+    End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class molding_mainframe
     Private Sub molding_mainframe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If con.ConnectionString = "server=localhost;user id=Inventorysystem;password=admin@2024;database=trcsystem" Then
+        If con.ConnectionString = "server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem" Then
             error_panel.Visible = True
             display_form(machine_frame)
             'credentials for log in

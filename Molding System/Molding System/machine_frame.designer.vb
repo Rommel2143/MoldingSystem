@@ -50,12 +50,13 @@ Partial Class machine_frame
         Me.MIXEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OUTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReturnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.resin_additem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DensoLabelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.error_panel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_error = New System.Windows.Forms.Label()
-        Me.ReturnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.error_panel.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,7 +75,7 @@ Partial Class machine_frame
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_machine, Me.userstrip, Me.btn_resin})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_machine, Me.userstrip, Me.btn_resin, Me.DensoLabelToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -189,7 +190,7 @@ Partial Class machine_frame
         Me.DashboardToolStripMenuItem.Image = CType(resources.GetObject("DashboardToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
         Me.DashboardToolStripMenuItem.Text = "Dashboard"
         '
         'CreateStickerToolStripMenuItem
@@ -197,7 +198,7 @@ Partial Class machine_frame
         Me.CreateStickerToolStripMenuItem.Image = CType(resources.GetObject("CreateStickerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CreateStickerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CreateStickerToolStripMenuItem.Name = "CreateStickerToolStripMenuItem"
-        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
         Me.CreateStickerToolStripMenuItem.Text = "Print Serial"
         '
         'ScaninToolStripMenuItem
@@ -206,7 +207,7 @@ Partial Class machine_frame
         Me.ScaninToolStripMenuItem.Image = CType(resources.GetObject("ScaninToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ScaninToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ScaninToolStripMenuItem.Name = "ScaninToolStripMenuItem"
-        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
         Me.ScaninToolStripMenuItem.Text = "VIRGIN"
         '
         'INToolStripMenuItem
@@ -233,7 +234,7 @@ Partial Class machine_frame
         Me.RECYCLEDToolStripMenuItem.Image = CType(resources.GetObject("RECYCLEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RECYCLEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RECYCLEDToolStripMenuItem.Name = "RECYCLEDToolStripMenuItem"
-        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
         Me.RECYCLEDToolStripMenuItem.Text = "RECYCLED"
         '
         'INToolStripMenuItem2
@@ -254,28 +255,40 @@ Partial Class machine_frame
         Me.MIXEDToolStripMenuItem.Image = CType(resources.GetObject("MIXEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MIXEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
-        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
         Me.MIXEDToolStripMenuItem.Text = "MIXED"
         '
         'INToolStripMenuItem1
         '
         Me.INToolStripMenuItem1.Name = "INToolStripMenuItem1"
-        Me.INToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.INToolStripMenuItem1.Size = New System.Drawing.Size(129, 26)
         Me.INToolStripMenuItem1.Text = "IN"
         '
         'OUTToolStripMenuItem1
         '
         Me.OUTToolStripMenuItem1.Name = "OUTToolStripMenuItem1"
-        Me.OUTToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.OUTToolStripMenuItem1.Size = New System.Drawing.Size(129, 26)
         Me.OUTToolStripMenuItem1.Text = "OUT"
+        '
+        'ReturnToolStripMenuItem1
+        '
+        Me.ReturnToolStripMenuItem1.Name = "ReturnToolStripMenuItem1"
+        Me.ReturnToolStripMenuItem1.Size = New System.Drawing.Size(129, 26)
+        Me.ReturnToolStripMenuItem1.Text = "Return"
         '
         'resin_additem
         '
         Me.resin_additem.Image = CType(resources.GetObject("resin_additem.Image"), System.Drawing.Image)
         Me.resin_additem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.resin_additem.Name = "resin_additem"
-        Me.resin_additem.Size = New System.Drawing.Size(196, 38)
+        Me.resin_additem.Size = New System.Drawing.Size(175, 38)
         Me.resin_additem.Text = "Add item"
+        '
+        'DensoLabelToolStripMenuItem
+        '
+        Me.DensoLabelToolStripMenuItem.Name = "DensoLabelToolStripMenuItem"
+        Me.DensoLabelToolStripMenuItem.Size = New System.Drawing.Size(111, 49)
+        Me.DensoLabelToolStripMenuItem.Text = "Denso Label"
         '
         'error_panel
         '
@@ -331,12 +344,6 @@ Partial Class machine_frame
         Me.lbl_error.TabIndex = 0
         Me.lbl_error.Text = "---"
         '
-        'ReturnToolStripMenuItem1
-        '
-        Me.ReturnToolStripMenuItem1.Name = "ReturnToolStripMenuItem1"
-        Me.ReturnToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
-        Me.ReturnToolStripMenuItem1.Text = "Return"
-        '
         'machine_frame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,4 +398,5 @@ Partial Class machine_frame
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents lbl_error As Label
     Friend WithEvents ReturnToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DensoLabelToolStripMenuItem As ToolStripMenuItem
 End Class

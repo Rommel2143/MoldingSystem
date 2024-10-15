@@ -90,8 +90,8 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Google.Protobuf, Version=3.28.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.28.0\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.28.2.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.28.2\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
@@ -124,8 +124,8 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.1\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -179,6 +179,29 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Label\labelrpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labelrpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Label\label_dataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>label_dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Label\print label.Designer.vb">
+      <DependentUpon>print label.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Label\print label.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Label\smalllabel.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>smalllabel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Login.designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -244,10 +267,10 @@
     <Compile Include="Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MACHINE_OUTPUT\machine_frame.designer.vb">
+    <Compile Include="machine_frame.designer.vb">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </Compile>
-    <Compile Include="MACHINE_OUTPUT\machine_frame.vb">
+    <Compile Include="machine_frame.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RESIN\add_resin.Designer.vb">
@@ -347,6 +370,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Label\labelrpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>labelrpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Label\print label.resx">
+      <DependentUpon>print label.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Label\smalllabel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>smalllabel.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -377,7 +411,7 @@
     <EmbeddedResource Include="Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MACHINE_OUTPUT\machine_frame.resx">
+    <EmbeddedResource Include="machine_frame.resx">
       <DependentUpon>machine_frame.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\add_resin.resx">
@@ -428,6 +462,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Label\label_dataset.xsc">
+      <DependentUpon>label_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Label\label_dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>label_dataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Label\label_dataset.xss">
+      <DependentUpon>label_dataset.xsd</DependentUpon>
+    </None>
     <None Include="Molding System_2_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -472,6 +517,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Molding System.ico" />
+    <None Include="Resources\printer %282%29.png" />
     <Content Include="TRC %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
