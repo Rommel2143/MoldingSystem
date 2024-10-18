@@ -12,7 +12,7 @@
   <xs:element name="label_dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="label_dataset" msprop:Generator_UserDSName="label_dataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="label" msprop:Generator_TableClassName="labelDataTable" msprop:Generator_TableVarName="tablelabel" msprop:Generator_TablePropName="label" msprop:Generator_RowDeletingName="labelRowDeleting" msprop:Generator_RowChangingName="labelRowChanging" msprop:Generator_RowEvHandlerName="labelRowChangeEventHandler" msprop:Generator_RowDeletedName="labelRowDeleted" msprop:Generator_UserTableName="label" msprop:Generator_RowChangedName="labelRowChanged" msprop:Generator_RowEvArgName="labelRowChangeEvent" msprop:Generator_RowClassName="labelRow">
+        <xs:element name="label" msprop:Generator_TableClassName="labelDataTable" msprop:Generator_TableVarName="tablelabel" msprop:Generator_RowChangedName="labelRowChanged" msprop:Generator_TablePropName="label" msprop:Generator_RowDeletingName="labelRowDeleting" msprop:Generator_RowChangingName="labelRowChanging" msprop:Generator_RowEvHandlerName="labelRowChangeEventHandler" msprop:Generator_RowDeletedName="labelRowDeleted" msprop:Generator_RowClassName="labelRow" msprop:Generator_UserTableName="label" msprop:Generator_RowEvArgName="labelRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
@@ -30,6 +30,17 @@
               <xs:element name="supcd" msprop:Generator_ColumnVarNameInTable="columnsupcd" msprop:Generator_ColumnPropNameInRow="supcd" msprop:Generator_ColumnPropNameInTable="supcdColumn" msprop:Generator_UserColumnName="supcd" type="xs:string" minOccurs="0" />
               <xs:element name="cavity" msprop:Generator_ColumnVarNameInTable="columncavity" msprop:Generator_ColumnPropNameInRow="cavity" msprop:Generator_ColumnPropNameInTable="cavityColumn" msprop:Generator_UserColumnName="cavity" type="xs:string" minOccurs="0" />
               <xs:element name="qrcode" msprop:Generator_ColumnVarNameInTable="columnqrcode" msprop:Generator_ColumnPropNameInRow="qrcode" msprop:Generator_ColumnPropNameInTable="qrcodeColumn" msprop:Generator_UserColumnName="qrcode" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="label_small" msprop:Generator_TableClassName="label_smallDataTable" msprop:Generator_TableVarName="tablelabel_small" msprop:Generator_TablePropName="label_small" msprop:Generator_RowDeletingName="label_smallRowDeleting" msprop:Generator_RowChangingName="label_smallRowChanging" msprop:Generator_RowEvHandlerName="label_smallRowChangeEventHandler" msprop:Generator_RowDeletedName="label_smallRowDeleted" msprop:Generator_UserTableName="label_small" msprop:Generator_RowChangedName="label_smallRowChanged" msprop:Generator_RowEvArgName="label_smallRowChangeEvent" msprop:Generator_RowClassName="label_smallRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="partname" msprop:Generator_ColumnVarNameInTable="columnpartname" msprop:Generator_ColumnPropNameInRow="partname" msprop:Generator_ColumnPropNameInTable="partnameColumn" msprop:Generator_UserColumnName="partname" type="xs:string" minOccurs="0" />
+              <xs:element name="lot" msprop:Generator_ColumnVarNameInTable="columnlot" msprop:Generator_ColumnPropNameInRow="lot" msprop:Generator_ColumnPropNameInTable="lotColumn" msprop:Generator_UserColumnName="lot" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="qr" msprop:Generator_ColumnVarNameInTable="columnqr" msprop:Generator_ColumnPropNameInRow="qr" msprop:Generator_ColumnPropNameInTable="qrColumn" msprop:Generator_UserColumnName="qr" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

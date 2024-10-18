@@ -4,6 +4,7 @@ Imports System.IO
 Public Class print_label
     Dim label_shift As String = "A"
     Dim dt_records As New DataTable
+    Dim dt_small As New DataTable
     Dim partcode As String
     Dim partname As String
     Private Sub print_label_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -137,7 +138,7 @@ Public Class print_label
 
             ' Load the report
             loadrpt()
-            loadrpt_small()
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
@@ -193,7 +194,7 @@ Public Class print_label
         'Dim myrpt As New print_serial
         Dim myrpt As New smalllabel
         ' Check if dt_records contains data
-        If dt_records Is Nothing OrElse dt_records.Rows.Count = 0 Then
+        If dt_small Is Nothing OrElse dt_small.Rows.Count = 0 Then
             MessageBox.Show("No data available for the report.")
             Exit Sub
         End If
@@ -203,17 +204,93 @@ Public Class print_label
 
         Try
             ' Get the table from the report
-            Dim reportTable As CrystalDecisions.CrystalReports.Engine.Table = myrpt.Database.Tables("label")
+            Dim reportTable As CrystalDecisions.CrystalReports.Engine.Table = myrpt.Database.Tables("label_small")
             If reportTable Is Nothing Then
                 MessageBox.Show("Table not found in the report.")
                 Exit Sub
             End If
 
             ' Set the DataSource for the report
-            reportTable.SetDataSource(dt_records)
+            reportTable.SetDataSource(dt_small)
             CrystalReportViewer2.ReportSource = myrpt
         Catch ex As Exception
             MessageBox.Show("Error setting report data source: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_qrsmall.TextChanged
+
+    End Sub
+
+    Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_qrsmall.KeyDown
+
+
+    End Sub
+    Private Sub small_initializedata(qr As String)
+        Try
+            Dim qrcode As String = qr ' Replace with actual qrcode string
+
+            ' Extract the values using Substring and the appropriate lengths
+            Dim partcode As String = qrcode.Substring(0, 15).TrimEnd
+            Dim total As Integer = Convert.ToInt32(qrcode.Substring(15, 5).TrimEnd)
+            Dim lotnumber As String = qrcode.Substring(20, 20).TrimEnd
+
+            Dim query As String = "SELECT partname FROM molding_label_masterlist WHERE partcode='" & partcode & "'"
+            con.Close()
+            con.Open()
+
+            Dim checkpartcode As New MySqlCommand(query, con)
+            dr = checkpartcode.ExecuteReader
+            dr.Read()
+            Dim partname As String = dr.GetString(0)
+            Dim qty As Integer = total / num_count.Value
+
+            con.Close()
+            dt_small.Clear()
+            ' Initialize the DataTable columns only once during form load
+            If dt_small.Columns.Count = 0 Then
+                With dt_small
+                    .Columns.Add("partno", GetType(String))
+                    .Columns.Add("partname", GetType(String))
+                    .Columns.Add("lot", GetType(String))
+                    .Columns.Add("qty", GetType(Integer))
+                    .Columns.Add("qr", GetType(Byte()))
+                End With
+            End If
+            dt_small.Rows.Clear()
+            ' Input validation
+
+
+            ' Get the quantity input from num_qty
+            For i As Integer = 1 To num_count.Value
+
+
+                Dim qrImage As Image = GenerateQRCode(qr)
+                Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
+
+                ' Add the data and QR code to the DataTable
+                dt_small.Rows.Add(partcode, partname, lotnumber, qty, qrImageBytes)
+
+            Next
+
+            ' Load the report
+            loadrpt_small()
+            hide_error()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            ' Close the connection only if it was opened
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        If txt_qrsmall.Text.Length = 223 Then 'check string length
+            small_initializedata(txt_qrsmall.Text)
+        Else
+            display_error("Invalid QR Length")
+        End If
     End Sub
 End Class

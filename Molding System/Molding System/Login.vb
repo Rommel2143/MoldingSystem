@@ -61,22 +61,45 @@ Public Class Login
                     idno = dr("IDno").ToString
                     user_level = dr.GetInt32("status")
                     machine_frame.Panel1.Controls.Clear()
-                    Select Case dr.GetString("designation")
-                        Case "RS"
 
-                            machine_frame.btn_resin.Enabled = True
-                            machine_frame.btn_machine.Enabled = False
-                            If user_level = 1 Then
-                                machine_frame.resin_additem.Visible = True
-                            Else
-                                machine_frame.resin_additem.Visible = False
-                            End If
-                        Case "SM"
 
-                            machine_frame.btn_resin.Enabled = False
-                            machine_frame.btn_machine.Enabled = True
+                    'Denso Label
+                    If dr.GetInt32("denso_label") = 1 Then
+                        machine_frame.btn_denso.Visible = True
+                    Else
+                        machine_frame.btn_denso.Visible = False
+                    End If
 
-                    End Select
+
+                    'Resin
+                    If dr.GetInt32("resin") = 1 Then
+                        machine_frame.btn_resin.Enabled = True
+                    Else
+                        machine_frame.btn_resin.Enabled = False
+                    End If
+
+
+                    'Machine
+                    If dr.GetInt32("Machine") = 1 Then
+                        machine_frame.btn_machine.Enabled = True
+                    Else
+                        machine_frame.btn_machine.Enabled = False
+                    End If
+
+                    'ADMIN
+                    If user_level = 1 Then
+                        machine_frame.btn_delete.Visible = True
+                        machine_frame.btn_add.Visible = True
+                        machine_frame.resin_additem.Visible = True
+                        machine_frame.btn_mold.Visible = True
+                    Else
+                        machine_frame.btn_delete.Visible = False
+                        machine_frame.btn_add.Visible = False
+                        machine_frame.resin_additem.Visible = False
+                        machine_frame.btn_mold.Visible = False
+                    End If
+
+
 
                     display_form(machine_frame)
                     machine_frame.userstrip.Text = fname

@@ -4,8 +4,8 @@ Imports System.Text
 Module Module1
 
     Public Function connection() As MySqlConnection
-        '  Return New MySqlConnection("server=PTI-027s;user id=Inventory;password=inventory123@;database=trcsystem")
-        Return New MySqlConnection("server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem")
+        Return New MySqlConnection("server=PTI-027s;user id=Inventory;password=inventory123@;database=trcsystem")
+        '  Return New MySqlConnection("server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem")
 
     End Function
 
@@ -145,7 +145,9 @@ Module Module1
         machine_frame.error_panel.Visible = True
         machine_frame.lbl_error.Text = text
     End Sub
-
+    Public Sub hide_error()
+        machine_frame.error_panel.Hide()
+    End Sub
     Public Sub reload(ByVal sql As String, ByVal DTG As Object)
         Try
             dt = New DataTable

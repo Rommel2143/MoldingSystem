@@ -22,6 +22,7 @@ Partial Class print_label
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(print_label))
         Me.cmb_item = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,8 +35,6 @@ Partial Class print_label
         Me.lbl_cavity = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.num_mold = New Guna.UI2.WinForms.Guna2NumericUpDown()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txt_remarks = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
@@ -52,16 +51,26 @@ Partial Class print_label
         Me.txt_mlot = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_operator = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.num_mold = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.num_count = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.txt_qrsmall = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
-        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabcontrol1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
+        CType(Me.num_count, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_item
@@ -216,29 +225,6 @@ Partial Class print_label
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(469, 384)
         Me.Guna2Panel1.TabIndex = 22
-        '
-        'num_mold
-        '
-        Me.num_mold.BackColor = System.Drawing.Color.Transparent
-        Me.num_mold.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.num_mold.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.num_mold.Location = New System.Drawing.Point(766, 192)
-        Me.num_mold.Name = "num_mold"
-        Me.num_mold.Size = New System.Drawing.Size(88, 36)
-        Me.num_mold.TabIndex = 24
-        Me.num_mold.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
-        Me.num_mold.UpDownButtonForeColor = System.Drawing.Color.White
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(763, 172)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 17)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Mold no."
         '
         'Label15
         '
@@ -524,6 +510,29 @@ Partial Class print_label
         Me.txt_operator.Size = New System.Drawing.Size(134, 38)
         Me.txt_operator.TabIndex = 36
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label5.Location = New System.Drawing.Point(763, 172)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 17)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Mold no."
+        '
+        'num_mold
+        '
+        Me.num_mold.BackColor = System.Drawing.Color.Transparent
+        Me.num_mold.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.num_mold.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.num_mold.Location = New System.Drawing.Point(766, 192)
+        Me.num_mold.Name = "num_mold"
+        Me.num_mold.Size = New System.Drawing.Size(88, 36)
+        Me.num_mold.TabIndex = 24
+        Me.num_mold.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
+        Me.num_mold.UpDownButtonForeColor = System.Drawing.Color.White
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.CrystalReportViewer1)
@@ -550,6 +559,7 @@ Partial Class print_label
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.CrystalReportViewer2)
+        Me.TabPage3.Controls.Add(Me.Guna2Panel2)
         Me.TabPage3.Location = New System.Drawing.Point(184, 4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(935, 795)
@@ -563,10 +573,97 @@ Partial Class print_label
         Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer2.Location = New System.Drawing.Point(0, 0)
+        Me.CrystalReportViewer2.Location = New System.Drawing.Point(0, 144)
         Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
-        Me.CrystalReportViewer2.Size = New System.Drawing.Size(935, 795)
+        Me.CrystalReportViewer2.Size = New System.Drawing.Size(935, 651)
         Me.CrystalReportViewer2.TabIndex = 0
+        Me.CrystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel2.Controls.Add(Me.Label13)
+        Me.Guna2Panel2.Controls.Add(Me.num_count)
+        Me.Guna2Panel2.Controls.Add(Me.txt_qrsmall)
+        Me.Guna2Panel2.Controls.Add(Me.Label11)
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(935, 144)
+        Me.Guna2Panel2.TabIndex = 1
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.DarkSlateBlue
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(494, 56)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(108, 38)
+        Me.Guna2Button2.TabIndex = 39
+        Me.Guna2Button2.Text = "Generate"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label13.Location = New System.Drawing.Point(376, 36)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(42, 17)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "Count"
+        '
+        'num_count
+        '
+        Me.num_count.BackColor = System.Drawing.Color.Transparent
+        Me.num_count.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.num_count.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.num_count.Location = New System.Drawing.Point(379, 56)
+        Me.num_count.Name = "num_count"
+        Me.num_count.Size = New System.Drawing.Size(88, 38)
+        Me.num_count.TabIndex = 38
+        Me.num_count.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
+        Me.num_count.UpDownButtonForeColor = System.Drawing.Color.White
+        '
+        'txt_qrsmall
+        '
+        Me.txt_qrsmall.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_qrsmall.DefaultText = ""
+        Me.txt_qrsmall.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_qrsmall.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_qrsmall.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_qrsmall.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_qrsmall.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_qrsmall.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_qrsmall.ForeColor = System.Drawing.Color.Black
+        Me.txt_qrsmall.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_qrsmall.IconLeft = CType(resources.GetObject("txt_qrsmall.IconLeft"), System.Drawing.Image)
+        Me.txt_qrsmall.IconLeftSize = New System.Drawing.Size(30, 30)
+        Me.txt_qrsmall.Location = New System.Drawing.Point(34, 56)
+        Me.txt_qrsmall.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_qrsmall.MaxLength = 300
+        Me.txt_qrsmall.Name = "txt_qrsmall"
+        Me.txt_qrsmall.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_qrsmall.PlaceholderText = "Scan QR..."
+        Me.txt_qrsmall.SelectedText = ""
+        Me.txt_qrsmall.Size = New System.Drawing.Size(326, 38)
+        Me.txt_qrsmall.TabIndex = 35
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label11.Location = New System.Drawing.Point(31, 35)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(58, 17)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "Remarks"
         '
         'print_label
         '
@@ -580,12 +677,15 @@ Partial Class print_label
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
-        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabcontrol1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.Guna2Panel2.ResumeLayout(False)
+        Me.Guna2Panel2.PerformLayout()
+        CType(Me.num_count, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -602,8 +702,6 @@ Partial Class print_label
     Friend WithEvents lbl_cavity As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents num_mold As Guna.UI2.WinForms.Guna2NumericUpDown
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents txt_remarks As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents dtpicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
@@ -624,4 +722,12 @@ Partial Class print_label
     Friend WithEvents txt_mlot As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txt_qrsmall As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents num_mold As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents Label13 As Label
+    Friend WithEvents num_count As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

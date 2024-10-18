@@ -28,7 +28,7 @@
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
     <MinimumRequiredVersion>1.0.0.20</MinimumRequiredVersion>
-    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -350,6 +350,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>resin_dataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RESIN\virgin\delete _resin.Designer.vb">
+      <DependentUpon>delete _resin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RESIN\virgin\delete _resin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RESIN\virgin\virgin_IN.Designer.vb">
       <DependentUpon>virgin_IN.vb</DependentUpon>
     </Compile>
@@ -450,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\resin_dashboard.resx">
       <DependentUpon>resin_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESIN\virgin\delete _resin.resx">
+      <DependentUpon>delete _resin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESIN\virgin\virgin_IN.resx">
       <DependentUpon>virgin_IN.vb</DependentUpon>

@@ -29,8 +29,8 @@ Partial Class machine_frame
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SCANFGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddPartcodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddMoldToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_add = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_mold = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MinimizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,7 +52,8 @@ Partial Class machine_frame
         Me.OUTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReturnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.resin_additem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DensoLabelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_delete = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_denso = New System.Windows.Forms.ToolStripMenuItem()
         Me.error_panel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -75,7 +76,7 @@ Partial Class machine_frame
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_machine, Me.userstrip, Me.btn_resin, Me.DensoLabelToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_machine, Me.userstrip, Me.btn_resin, Me.btn_denso})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -84,7 +85,7 @@ Partial Class machine_frame
         '
         'btn_machine
         '
-        Me.btn_machine.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.SCANFGToolStripMenuItem, Me.AddPartcodeToolStripMenuItem, Me.AddMoldToolStripMenuItem})
+        Me.btn_machine.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.SCANFGToolStripMenuItem, Me.btn_add, Me.btn_mold})
         Me.btn_machine.Image = CType(resources.GetObject("btn_machine.Image"), System.Drawing.Image)
         Me.btn_machine.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_machine.Name = "btn_machine"
@@ -115,19 +116,21 @@ Partial Class machine_frame
         Me.SCANFGToolStripMenuItem.Size = New System.Drawing.Size(197, 38)
         Me.SCANFGToolStripMenuItem.Text = "SCAN FG"
         '
-        'AddPartcodeToolStripMenuItem
+        'btn_add
         '
-        Me.AddPartcodeToolStripMenuItem.Image = CType(resources.GetObject("AddPartcodeToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AddPartcodeToolStripMenuItem.Name = "AddPartcodeToolStripMenuItem"
-        Me.AddPartcodeToolStripMenuItem.Size = New System.Drawing.Size(197, 38)
-        Me.AddPartcodeToolStripMenuItem.Text = "Add Partcode"
+        Me.btn_add.Image = CType(resources.GetObject("btn_add.Image"), System.Drawing.Image)
+        Me.btn_add.Name = "btn_add"
+        Me.btn_add.Size = New System.Drawing.Size(197, 38)
+        Me.btn_add.Text = "Add Partcode"
+        Me.btn_add.Visible = False
         '
-        'AddMoldToolStripMenuItem
+        'btn_mold
         '
-        Me.AddMoldToolStripMenuItem.Image = CType(resources.GetObject("AddMoldToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AddMoldToolStripMenuItem.Name = "AddMoldToolStripMenuItem"
-        Me.AddMoldToolStripMenuItem.Size = New System.Drawing.Size(197, 38)
-        Me.AddMoldToolStripMenuItem.Text = "Add Mold"
+        Me.btn_mold.Image = CType(resources.GetObject("btn_mold.Image"), System.Drawing.Image)
+        Me.btn_mold.Name = "btn_mold"
+        Me.btn_mold.Size = New System.Drawing.Size(197, 38)
+        Me.btn_mold.Text = "Add Mold"
+        Me.btn_mold.Visible = False
         '
         'userstrip
         '
@@ -178,7 +181,7 @@ Partial Class machine_frame
         '
         'btn_resin
         '
-        Me.btn_resin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem, Me.resin_additem})
+        Me.btn_resin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.CreateStickerToolStripMenuItem, Me.ScaninToolStripMenuItem, Me.RECYCLEDToolStripMenuItem, Me.MIXEDToolStripMenuItem, Me.resin_additem, Me.btn_delete})
         Me.btn_resin.Image = CType(resources.GetObject("btn_resin.Image"), System.Drawing.Image)
         Me.btn_resin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_resin.Name = "btn_resin"
@@ -190,7 +193,7 @@ Partial Class machine_frame
         Me.DashboardToolStripMenuItem.Image = CType(resources.GetObject("DashboardToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.DashboardToolStripMenuItem.Text = "Dashboard"
         '
         'CreateStickerToolStripMenuItem
@@ -198,7 +201,7 @@ Partial Class machine_frame
         Me.CreateStickerToolStripMenuItem.Image = CType(resources.GetObject("CreateStickerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CreateStickerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CreateStickerToolStripMenuItem.Name = "CreateStickerToolStripMenuItem"
-        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.CreateStickerToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.CreateStickerToolStripMenuItem.Text = "Print Serial"
         '
         'ScaninToolStripMenuItem
@@ -207,7 +210,7 @@ Partial Class machine_frame
         Me.ScaninToolStripMenuItem.Image = CType(resources.GetObject("ScaninToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ScaninToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ScaninToolStripMenuItem.Name = "ScaninToolStripMenuItem"
-        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.ScaninToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.ScaninToolStripMenuItem.Text = "VIRGIN"
         '
         'INToolStripMenuItem
@@ -234,7 +237,7 @@ Partial Class machine_frame
         Me.RECYCLEDToolStripMenuItem.Image = CType(resources.GetObject("RECYCLEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RECYCLEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RECYCLEDToolStripMenuItem.Name = "RECYCLEDToolStripMenuItem"
-        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.RECYCLEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.RECYCLEDToolStripMenuItem.Text = "RECYCLED"
         '
         'INToolStripMenuItem2
@@ -255,7 +258,7 @@ Partial Class machine_frame
         Me.MIXEDToolStripMenuItem.Image = CType(resources.GetObject("MIXEDToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MIXEDToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MIXEDToolStripMenuItem.Name = "MIXEDToolStripMenuItem"
-        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(175, 38)
+        Me.MIXEDToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.MIXEDToolStripMenuItem.Text = "MIXED"
         '
         'INToolStripMenuItem1
@@ -281,14 +284,25 @@ Partial Class machine_frame
         Me.resin_additem.Image = CType(resources.GetObject("resin_additem.Image"), System.Drawing.Image)
         Me.resin_additem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.resin_additem.Name = "resin_additem"
-        Me.resin_additem.Size = New System.Drawing.Size(175, 38)
+        Me.resin_additem.Size = New System.Drawing.Size(196, 38)
         Me.resin_additem.Text = "Add item"
         '
-        'DensoLabelToolStripMenuItem
+        'btn_delete
         '
-        Me.DensoLabelToolStripMenuItem.Name = "DensoLabelToolStripMenuItem"
-        Me.DensoLabelToolStripMenuItem.Size = New System.Drawing.Size(111, 49)
-        Me.DensoLabelToolStripMenuItem.Text = "Denso Label"
+        Me.btn_delete.Image = CType(resources.GetObject("btn_delete.Image"), System.Drawing.Image)
+        Me.btn_delete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(196, 38)
+        Me.btn_delete.Text = "Delete QR"
+        Me.btn_delete.Visible = False
+        '
+        'btn_denso
+        '
+        Me.btn_denso.Image = CType(resources.GetObject("btn_denso.Image"), System.Drawing.Image)
+        Me.btn_denso.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.btn_denso.Name = "btn_denso"
+        Me.btn_denso.Size = New System.Drawing.Size(143, 49)
+        Me.btn_denso.Text = "Denso Label"
         '
         'error_panel
         '
@@ -370,8 +384,8 @@ Partial Class machine_frame
     Friend WithEvents btn_machine As ToolStripMenuItem
     Friend WithEvents PARTSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FGToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddPartcodeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddMoldToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_add As ToolStripMenuItem
+    Friend WithEvents btn_mold As ToolStripMenuItem
     Friend WithEvents userstrip As ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MinimizeToolStripMenuItem As ToolStripMenuItem
@@ -398,5 +412,6 @@ Partial Class machine_frame
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents lbl_error As Label
     Friend WithEvents ReturnToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents DensoLabelToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_denso As ToolStripMenuItem
+    Friend WithEvents btn_delete As ToolStripMenuItem
 End Class

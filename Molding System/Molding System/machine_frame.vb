@@ -58,11 +58,11 @@ Public Class machine_frame
         End With
     End Sub
 
-    Private Sub AddPartcodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddPartcodeToolStripMenuItem.Click
+    Private Sub AddPartcodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         display_form(addpartcode)
     End Sub
 
-    Private Sub AddMoldToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddMoldToolStripMenuItem.Click
+    Private Sub AddMoldToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_mold.Click
         display_form(addmold)
     End Sub
 
@@ -128,7 +128,11 @@ Public Class machine_frame
         display_formscan(mixed_return)
     End Sub
 
-    Private Sub DensoLabelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DensoLabelToolStripMenuItem.Click
+    Private Sub DensoLabelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_denso.Click
         display_formscan(print_label)
+    End Sub
+
+    Private Sub DeleteQRToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        display_formscan(delete__resin)
     End Sub
 End Class
