@@ -135,4 +135,20 @@ Public Class machine_frame
     Private Sub DeleteQRToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         display_formscan(delete__resin)
     End Sub
+
+    Private Sub ElematecToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ElematecToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        display_formscan(elematec_IN)
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        display_formscan(elematec_OUT)
+    End Sub
+
+    Private Sub ReturnBoxToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnBoxToolStripMenuItem.Click
+        display_formscan(elematec_return)
+    End Sub
 End Class

@@ -28,7 +28,7 @@
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
     <MinimumRequiredVersion>1.0.0.20</MinimumRequiredVersion>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -179,6 +179,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elematec\elematec_IN.Designer.vb">
+      <DependentUpon>elematec_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Elematec\elematec_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elematec\elematec_OUT.Designer.vb">
+      <DependentUpon>elematec_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Elematec\elematec_OUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elematec\elematec_return.Designer.vb">
+      <DependentUpon>elematec_return.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Elematec\elematec_return.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elematec\scan_results.designer.vb">
+      <DependentUpon>scan_results.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Elematec\scan_results.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Label\labelrpt.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -376,6 +400,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Elematec\elematec_IN.resx">
+      <DependentUpon>elematec_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elematec\elematec_OUT.resx">
+      <DependentUpon>elematec_OUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elematec\elematec_return.resx">
+      <DependentUpon>elematec_return.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elematec\scan_results.resx">
+      <DependentUpon>scan_results.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Label\labelrpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>labelrpt.vb</LastGenOutput>
