@@ -28,6 +28,17 @@ Public Class print_label
                 partcode = dr.GetString("partcode")
                 partname = dr.GetString("partname")
             End Using
+
+
+            con.Close()
+                con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT(mold) FROM molding_label_masterlist WHERE partcode='" & partcode & "'", con)
+            dr = cmdselect.ExecuteReader
+            cmb_mold.Items.Clear()
+            While (dr.Read())
+                cmb_mold.Items.Add(dr(0))
+            End While
+
         Catch ex As Exception
             display_error(ex.Message)
         End Try
@@ -62,7 +73,7 @@ Public Class print_label
 
 
         ' label_report.getdata(count, proddate, label_shift)
-        TabControl1.SelectedTab = TabPage2
+        tabcontrol1.SelectedTab = TabPage2
     End Sub
 
     Private Sub cmb_shift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_shift.SelectedIndexChanged
@@ -88,7 +99,7 @@ Public Class print_label
 
             Dim checkmax As New MySqlCommand(query, con)
             dr = checkmax.ExecuteReader
-                dr.Read()
+            dr.Read()
             serial = dr.GetInt32(0) + 1
             addserial = serial
             con.Close()
@@ -119,20 +130,20 @@ Public Class print_label
             For i As Integer = 1 To count
 
                 lotnumber = dtpicker1.Value.ToString("yyMMdd") & "-" & i & "-" & label_shift & "-" & txt_operator.Text.ToUpper
-                Dim qrcode As String = $"{partcode.PadRight(15)}{Convert.ToInt32(txt_total.Text).ToString.PadRight(5)}{lotnumber.PadRight(20)}{txt_mlot.Text.PadRight(20)}{num_mold.Value.ToString.PadRight(20)}{lbl_cavity.Text.ToString.PadRight(20)}{Date.Now.ToString("MM/d/yyyy").PadRight(10)}{lbl_material.Text.PadRight(40)}{"P86"}{serial.ToString.PadRight(10)}{txt_remarks.Text.PadRight(30)}{addserial.ToString.PadRight(10)}{lotnumber.PadRight(20)}"
+                Dim qrcode As String = $"{partcode.PadRight(15)}{Convert.ToInt32(txt_total.Text).ToString.PadRight(5)}{lotnumber.PadRight(20)}{txt_mlot.Text.PadRight(20)}{cmb_mold.Text.PadRight(20)}{lbl_cavity.Text.ToString.PadRight(20)}{Date.Now.ToString("MM/d/yyyy").PadRight(10)}{lbl_material.Text.PadRight(40)}{"P86"}{serial.ToString.PadRight(10)}{txt_remarks.Text.PadRight(30)}{addserial.ToString.PadRight(10)}{lotnumber.PadRight(20)}"
                 ' Generate the QR code and convert it to a byte array
                 Dim qrImage As Image = GenerateQRCode(qrcode)
                 Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
 
                 ' Add the data and QR code to the DataTable
-                dt_records.Rows.Add(partcode, partname, cmb_process.Text, lbl_model.Text, lotnumber, txt_total.Text, lbl_material.Text, txt_mlot.Text, i, num_mold.Value.ToString, txt_remarks.Text, dtpicker1.Value, "P86" & serial, lbl_cavity.Text, qrImageBytes)
+                dt_records.Rows.Add(partcode, partname, cmb_process.Text, lbl_model.Text, lotnumber, txt_total.Text, lbl_material.Text, txt_mlot.Text, i, cmb_mold.Text, txt_remarks.Text, dtpicker1.Value, "P86" & serial, lbl_cavity.Text, qrImageBytes)
                 con.Close()
                 con.Open()
                 Dim queryadd As String = "INSERT INTO molding_label_serial (qrcode) VALUES ('" & qrcode & "')"
                 Dim addqr As New MySqlCommand(queryadd, con)
                 addqr.ExecuteNonQuery()
 
-                    con.Close()
+                con.Close()
                 addserial += 1
             Next
 
@@ -234,8 +245,9 @@ Public Class print_label
             Dim partcode As String = qrcode.Substring(0, 15).TrimEnd
             Dim total As Integer = Convert.ToInt32(qrcode.Substring(15, 5).TrimEnd)
             Dim lotnumber As String = qrcode.Substring(20, 20).TrimEnd
+            Dim mold As String = qrcode.Substring(60, 1).TrimEnd
 
-            Dim query As String = "SELECT partname FROM molding_label_masterlist WHERE partcode='" & partcode & "'"
+            Dim query As String = "SELECT partname FROM molding_label_masterlist WHERE partcode='" & partcode & "' and mold ='" & mold & "'"
             con.Close()
             con.Open()
 
@@ -292,5 +304,9 @@ Public Class print_label
         Else
             display_error("Invalid QR Length")
         End If
+    End Sub
+
+    Private Sub cmbmold_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_mold.SelectedIndexChanged
+
     End Sub
 End Class

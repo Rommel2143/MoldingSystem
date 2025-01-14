@@ -52,7 +52,6 @@ Partial Class print_label
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_operator = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.num_mold = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -63,10 +62,10 @@ Partial Class print_label
         Me.num_count = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.txt_qrsmall = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmb_mold = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.tabcontrol1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -223,7 +222,7 @@ Partial Class print_label
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(64, 96)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(469, 384)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(469, 426)
         Me.Guna2Panel1.TabIndex = 22
         '
         'Label15
@@ -416,6 +415,7 @@ Partial Class print_label
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.cmb_mold)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.txt_mlot)
         Me.TabPage1.Controls.Add(Me.Label8)
@@ -425,7 +425,6 @@ Partial Class print_label
         Me.TabPage1.Controls.Add(Me.txt_total)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.cmb_process)
-        Me.TabPage1.Controls.Add(Me.num_mold)
         Me.TabPage1.Controls.Add(Me.dtpicker1)
         Me.TabPage1.Controls.Add(Me.txt_qty)
         Me.TabPage1.Controls.Add(Me.cmb_shift)
@@ -520,18 +519,6 @@ Partial Class print_label
         Me.Label5.Size = New System.Drawing.Size(61, 17)
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Mold no."
-        '
-        'num_mold
-        '
-        Me.num_mold.BackColor = System.Drawing.Color.Transparent
-        Me.num_mold.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.num_mold.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.num_mold.Location = New System.Drawing.Point(766, 192)
-        Me.num_mold.Name = "num_mold"
-        Me.num_mold.Size = New System.Drawing.Size(88, 36)
-        Me.num_mold.TabIndex = 24
-        Me.num_mold.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
-        Me.num_mold.UpDownButtonForeColor = System.Drawing.Color.White
         '
         'TabPage2
         '
@@ -665,6 +652,21 @@ Partial Class print_label
         Me.Label11.TabIndex = 36
         Me.Label11.Text = "Remarks"
         '
+        'cmb_mold
+        '
+        Me.cmb_mold.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_mold.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_mold.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_mold.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_mold.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_mold.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_mold.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_mold.ItemHeight = 30
+        Me.cmb_mold.Location = New System.Drawing.Point(766, 192)
+        Me.cmb_mold.Name = "cmb_mold"
+        Me.cmb_mold.Size = New System.Drawing.Size(86, 36)
+        Me.cmb_mold.TabIndex = 40
+        '
         'print_label
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -680,7 +682,6 @@ Partial Class print_label
         Me.tabcontrol1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.num_mold, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
@@ -726,8 +727,8 @@ Partial Class print_label
     Friend WithEvents Label11 As Label
     Friend WithEvents txt_qrsmall As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents num_mold As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Label13 As Label
     Friend WithEvents num_count As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cmb_mold As Guna.UI2.WinForms.Guna2ComboBox
 End Class
