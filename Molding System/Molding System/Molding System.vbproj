@@ -28,7 +28,7 @@
     <UpdateUrl>\\ptif1-ds\shared\IT\system\moldingsystem\</UpdateUrl>
     <PublisherName>RommelMagnaye</PublisherName>
     <MinimumRequiredVersion>1.0.0.20</MinimumRequiredVersion>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

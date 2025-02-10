@@ -9,7 +9,7 @@ Public Class print_label
     Dim partname As String
     Private Sub print_label_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker1.Value = Date.Now
-        cmb_display("SELECT CONCAT(partcode,'-',partname) AS item FROM molding_label_masterlist", "item", cmb_item)
+        cmb_display("SELECT CONCAT(partcode,'-',partname, ' : ',mold) AS item FROM molding_label_masterlist ORDER BY partname ASC", "item", cmb_item)
     End Sub
 
     Private Sub cmb_item_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_item.SelectedIndexChanged
@@ -17,7 +17,7 @@ Public Class print_label
             con.Close()
             con.Open()
 
-            Dim query As String = "SELECT `id`, `partcode`, `partname`, `model`, `material`, `cavity`, `qty` FROM molding_label_masterlist WHERE CONCAT(partcode,'-',partname)='" & cmb_item.Text & "'"
+            Dim query As String = "SELECT `id`, `partcode`, `partname`, `model`, `material`, `cavity`, `qty`,`mold` FROM molding_label_masterlist WHERE CONCAT(partcode,'-',partname, ' : ',mold)='" & cmb_item.Text & "' ORDER BY partcode ASC"
             Using displaydata As New MySqlCommand(query, con)
                 dr = displaydata.ExecuteReader
                 dr.Read()
@@ -27,17 +27,12 @@ Public Class print_label
                 lbl_model.Text = dr.GetString("model")
                 partcode = dr.GetString("partcode")
                 partname = dr.GetString("partname")
+
+                cmb_mold.Text = dr.GetInt32("mold").ToString
             End Using
 
 
-            con.Close()
-                con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT(mold) FROM molding_label_masterlist WHERE partcode='" & partcode & "'", con)
-            dr = cmdselect.ExecuteReader
-            cmb_mold.Items.Clear()
-            While (dr.Read())
-                cmb_mold.Items.Add(dr(0))
-            End While
+
 
         Catch ex As Exception
             display_error(ex.Message)
@@ -306,7 +301,20 @@ Public Class print_label
         End If
     End Sub
 
-    Private Sub cmbmold_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_mold.SelectedIndexChanged
+    Private Sub cmbmold_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txt_search_TextChanged(sender As Object, e As EventArgs) Handles txt_search.TextChanged
+        If txt_search.Text = "" Then
+            cmb_display("SELECT CONCAT(partcode,'-',partname, ' : ',mold) AS item FROM molding_label_masterlist ORDER BY partname ASC", "item", cmb_item)
+        Else
+            cmb_display("SELECT CONCAT(partcode,'-',partname, ' : ',mold) AS item FROM molding_label_masterlist WHERE CONCAT(partcode,'-',partname) REGEXP '" & txt_search.Text.Trim & "' ORDER BY partname ASC", "item", cmb_item)
+
+        End If
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
     End Sub
 End Class

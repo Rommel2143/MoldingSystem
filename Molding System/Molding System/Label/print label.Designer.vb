@@ -35,6 +35,8 @@ Partial Class print_label
         Me.lbl_cavity = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cmb_mold = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txt_remarks = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
@@ -51,7 +53,6 @@ Partial Class print_label
         Me.txt_mlot = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_operator = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -62,7 +63,7 @@ Partial Class print_label
         Me.num_count = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.txt_qrsmall = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.cmb_mold = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txt_search = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.tabcontrol1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -76,15 +77,18 @@ Partial Class print_label
         '
         Me.cmb_item.BackColor = System.Drawing.Color.Transparent
         Me.cmb_item.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_item.DropDownHeight = 360
         Me.cmb_item.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_item.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmb_item.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmb_item.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_item.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_item.IntegralHeight = False
         Me.cmb_item.ItemHeight = 30
-        Me.cmb_item.Location = New System.Drawing.Point(51, 76)
+        Me.cmb_item.Location = New System.Drawing.Point(184, 76)
+        Me.cmb_item.MaxDropDownItems = 10
         Me.cmb_item.Name = "cmb_item"
-        Me.cmb_item.Size = New System.Drawing.Size(316, 36)
+        Me.cmb_item.Size = New System.Drawing.Size(249, 36)
         Me.cmb_item.TabIndex = 0
         '
         'Label1
@@ -93,7 +97,7 @@ Partial Class print_label
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(48, 56)
+        Me.Label1.Location = New System.Drawing.Point(37, 56)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 17)
         Me.Label1.TabIndex = 1
@@ -123,7 +127,7 @@ Partial Class print_label
         Me.cmb_process.Items.AddRange(New Object() {"Injection", "Assembly", "Packing Process"})
         Me.cmb_process.Location = New System.Drawing.Point(561, 192)
         Me.cmb_process.Name = "cmb_process"
-        Me.cmb_process.Size = New System.Drawing.Size(181, 36)
+        Me.cmb_process.Size = New System.Drawing.Size(291, 36)
         Me.cmb_process.TabIndex = 2
         '
         'Label4
@@ -143,7 +147,7 @@ Partial Class print_label
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(64, 175)
+        Me.Label6.Location = New System.Drawing.Point(62, 144)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 17)
         Me.Label6.TabIndex = 11
@@ -155,7 +159,7 @@ Partial Class print_label
         Me.lbl_material.BackColor = System.Drawing.Color.Transparent
         Me.lbl_material.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_material.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_material.Location = New System.Drawing.Point(64, 192)
+        Me.lbl_material.Location = New System.Drawing.Point(62, 161)
         Me.lbl_material.Name = "lbl_material"
         Me.lbl_material.Size = New System.Drawing.Size(28, 21)
         Me.lbl_material.TabIndex = 15
@@ -167,7 +171,7 @@ Partial Class print_label
         Me.lbl_model.BackColor = System.Drawing.Color.Transparent
         Me.lbl_model.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_model.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_model.Location = New System.Drawing.Point(64, 256)
+        Me.lbl_model.Location = New System.Drawing.Point(62, 225)
         Me.lbl_model.Name = "lbl_model"
         Me.lbl_model.Size = New System.Drawing.Size(28, 21)
         Me.lbl_model.TabIndex = 17
@@ -179,7 +183,7 @@ Partial Class print_label
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(64, 239)
+        Me.Label10.Location = New System.Drawing.Point(62, 208)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(46, 17)
         Me.Label10.TabIndex = 16
@@ -191,7 +195,7 @@ Partial Class print_label
         Me.lbl_cavity.BackColor = System.Drawing.Color.Transparent
         Me.lbl_cavity.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_cavity.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_cavity.Location = New System.Drawing.Point(65, 320)
+        Me.lbl_cavity.Location = New System.Drawing.Point(63, 289)
         Me.lbl_cavity.Name = "lbl_cavity"
         Me.lbl_cavity.Size = New System.Drawing.Size(28, 21)
         Me.lbl_cavity.TabIndex = 19
@@ -203,7 +207,7 @@ Partial Class print_label
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label12.Location = New System.Drawing.Point(65, 303)
+        Me.Label12.Location = New System.Drawing.Point(63, 272)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(42, 17)
         Me.Label12.TabIndex = 18
@@ -211,6 +215,8 @@ Partial Class print_label
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.txt_search)
+        Me.Guna2Panel1.Controls.Add(Me.cmb_mold)
         Me.Guna2Panel1.Controls.Add(Me.lbl_cavity)
         Me.Guna2Panel1.Controls.Add(Me.Label12)
         Me.Guna2Panel1.Controls.Add(Me.lbl_model)
@@ -218,12 +224,36 @@ Partial Class print_label
         Me.Guna2Panel1.Controls.Add(Me.lbl_material)
         Me.Guna2Panel1.Controls.Add(Me.Label6)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
+        Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.cmb_item)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(64, 96)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(469, 426)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(469, 440)
         Me.Guna2Panel1.TabIndex = 22
+        '
+        'cmb_mold
+        '
+        Me.cmb_mold.AutoSize = True
+        Me.cmb_mold.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_mold.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_mold.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.cmb_mold.Location = New System.Drawing.Point(63, 357)
+        Me.cmb_mold.Name = "cmb_mold"
+        Me.cmb_mold.Size = New System.Drawing.Size(28, 21)
+        Me.cmb_mold.TabIndex = 24
+        Me.cmb_mold.Text = "---"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label5.Location = New System.Drawing.Point(62, 336)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 17)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Mold no."
         '
         'Label15
         '
@@ -415,7 +445,6 @@ Partial Class print_label
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.cmb_mold)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.txt_mlot)
         Me.TabPage1.Controls.Add(Me.Label8)
@@ -423,7 +452,6 @@ Partial Class print_label
         Me.TabPage1.Controls.Add(Me.Guna2Panel1)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.txt_total)
-        Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.cmb_process)
         Me.TabPage1.Controls.Add(Me.dtpicker1)
         Me.TabPage1.Controls.Add(Me.txt_qty)
@@ -508,17 +536,6 @@ Partial Class print_label
         Me.txt_operator.SelectedText = ""
         Me.txt_operator.Size = New System.Drawing.Size(134, 38)
         Me.txt_operator.TabIndex = 36
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(763, 172)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 17)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Mold no."
         '
         'TabPage2
         '
@@ -615,7 +632,6 @@ Partial Class print_label
         Me.num_count.Size = New System.Drawing.Size(88, 38)
         Me.num_count.TabIndex = 38
         Me.num_count.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
-        Me.num_count.UpDownButtonForeColor = System.Drawing.Color.White
         '
         'txt_qrsmall
         '
@@ -652,20 +668,28 @@ Partial Class print_label
         Me.Label11.TabIndex = 36
         Me.Label11.Text = "Remarks"
         '
-        'cmb_mold
+        'txt_search
         '
-        Me.cmb_mold.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_mold.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_mold.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_mold.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_mold.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_mold.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_mold.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_mold.ItemHeight = 30
-        Me.cmb_mold.Location = New System.Drawing.Point(766, 192)
-        Me.cmb_mold.Name = "cmb_mold"
-        Me.cmb_mold.Size = New System.Drawing.Size(86, 36)
-        Me.cmb_mold.TabIndex = 40
+        Me.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_search.DefaultText = ""
+        Me.txt_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_search.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_search.ForeColor = System.Drawing.Color.Black
+        Me.txt_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_search.IconLeft = CType(resources.GetObject("txt_search.IconLeft"), System.Drawing.Image)
+        Me.txt_search.Location = New System.Drawing.Point(40, 77)
+        Me.txt_search.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_search.MaxLength = 30
+        Me.txt_search.Name = "txt_search"
+        Me.txt_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_search.PlaceholderText = "Input Keywords..."
+        Me.txt_search.SelectedText = ""
+        Me.txt_search.Size = New System.Drawing.Size(138, 35)
+        Me.txt_search.TabIndex = 40
         '
         'print_label
         '
@@ -730,5 +754,6 @@ Partial Class print_label
     Friend WithEvents Label13 As Label
     Friend WithEvents num_count As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cmb_mold As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmb_mold As Label
+    Friend WithEvents txt_search As Guna.UI2.WinForms.Guna2TextBox
 End Class
