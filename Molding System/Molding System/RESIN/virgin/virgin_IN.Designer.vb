@@ -231,7 +231,6 @@ Partial Class virgin_IN
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
         Me.txtqr.Location = New System.Drawing.Point(21, 10)
         Me.txtqr.Name = "txtqr"
-        Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan Barcode..."
         Me.txtqr.SelectedText = ""
         Me.txtqr.Size = New System.Drawing.Size(587, 36)
