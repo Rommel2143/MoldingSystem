@@ -39,10 +39,10 @@ Partial Class print_sticker_virgin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_qty = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.resin_kg = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_generate = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.txt_qty, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +62,7 @@ Partial Class print_sticker_virgin
         Me.cmb_resin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_resin.IntegralHeight = False
         Me.cmb_resin.ItemHeight = 30
-        Me.cmb_resin.Location = New System.Drawing.Point(237, 50)
+        Me.cmb_resin.Location = New System.Drawing.Point(233, 43)
         Me.cmb_resin.MaxDropDownItems = 5
         Me.cmb_resin.Name = "cmb_resin"
         Me.cmb_resin.Size = New System.Drawing.Size(376, 36)
@@ -73,7 +73,7 @@ Partial Class print_sticker_virgin
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(234, 34)
+        Me.Label3.Location = New System.Drawing.Point(230, 27)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(74, 13)
         Me.Label3.TabIndex = 150
@@ -185,7 +185,7 @@ Partial Class print_sticker_virgin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(33, 107)
+        Me.Label1.Location = New System.Drawing.Point(29, 100)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 151
@@ -203,7 +203,7 @@ Partial Class print_sticker_virgin
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.IntegralHeight = False
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Location = New System.Drawing.Point(36, 50)
+        Me.cmb_type.Location = New System.Drawing.Point(32, 43)
         Me.cmb_type.MaxDropDownItems = 5
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(167, 36)
@@ -214,9 +214,9 @@ Partial Class print_sticker_virgin
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(33, 34)
+        Me.Label2.Location = New System.Drawing.Point(29, 27)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 13)
+        Me.Label2.Size = New System.Drawing.Size(69, 13)
         Me.Label2.TabIndex = 154
         Me.Label2.Text = " Resin Type :"
         '
@@ -225,7 +225,7 @@ Partial Class print_sticker_virgin
         Me.txt_qty.BackColor = System.Drawing.Color.Transparent
         Me.txt_qty.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txt_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_qty.Location = New System.Drawing.Point(36, 123)
+        Me.txt_qty.Location = New System.Drawing.Point(32, 116)
         Me.txt_qty.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txt_qty.Name = "txt_qty"
         Me.txt_qty.Size = New System.Drawing.Size(141, 62)
@@ -251,6 +251,17 @@ Partial Class print_sticker_virgin
         Me.Guna2Panel2.Size = New System.Drawing.Size(1330, 226)
         Me.Guna2Panel2.TabIndex = 234
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Location = New System.Drawing.Point(615, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(181, 65)
+        Me.Label5.TabIndex = 238
+        Me.Label5.Text = "VIRGIN"
+        '
         'resin_kg
         '
         Me.resin_kg.BackColor = System.Drawing.Color.Transparent
@@ -258,7 +269,7 @@ Partial Class print_sticker_virgin
         Me.resin_kg.DecimalPlaces = 2
         Me.resin_kg.Enabled = False
         Me.resin_kg.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.resin_kg.Location = New System.Drawing.Point(237, 123)
+        Me.resin_kg.Location = New System.Drawing.Point(233, 116)
         Me.resin_kg.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
         Me.resin_kg.Name = "resin_kg"
         Me.resin_kg.Size = New System.Drawing.Size(141, 62)
@@ -270,7 +281,7 @@ Partial Class print_sticker_virgin
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(234, 107)
+        Me.Label4.Location = New System.Drawing.Point(230, 100)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(27, 13)
         Me.Label4.TabIndex = 236
@@ -288,22 +299,11 @@ Partial Class print_sticker_virgin
         Me.btn_generate.ForeColor = System.Drawing.Color.White
         Me.btn_generate.Image = CType(resources.GetObject("btn_generate.Image"), System.Drawing.Image)
         Me.btn_generate.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btn_generate.Location = New System.Drawing.Point(438, 123)
+        Me.btn_generate.Location = New System.Drawing.Point(434, 116)
         Me.btn_generate.Name = "btn_generate"
         Me.btn_generate.Size = New System.Drawing.Size(175, 62)
         Me.btn_generate.TabIndex = 234
         Me.btn_generate.Text = "Generate Serial"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(619, 123)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(181, 65)
-        Me.Label5.TabIndex = 238
-        Me.Label5.Text = "VIRGIN"
         '
         'print_sticker_virgin
         '
