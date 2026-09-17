@@ -68,10 +68,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D8FA752B231D7089889BC8AD6E9FF7252029ED49</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4DA3A624DD207FCECA9FE53C64B49D30BD2AB0B8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Molding System_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Molding System_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -518,6 +518,7 @@
     <None Include="Label\label_dataset.xss">
       <DependentUpon>label_dataset.xsd</DependentUpon>
     </None>
+    <None Include="Molding System_1_TemporaryKey.pfx" />
     <None Include="Molding System_2_TemporaryKey.pfx" />
     <None Include="Molding System_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
