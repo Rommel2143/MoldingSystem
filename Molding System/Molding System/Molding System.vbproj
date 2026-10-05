@@ -44,6 +44,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Molding System.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseWinFormsOutOfProcDesigner>True</UseWinFormsOutOfProcDesigner>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +55,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Molding System.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseWinFormsOutOfProcDesigner>True</UseWinFormsOutOfProcDesigner>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -68,10 +70,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4DA3A624DD207FCECA9FE53C64B49D30BD2AB0B8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7C626B426039D9B94E95DB1249E5BA223A4578CB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Molding System_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Molding System_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -520,6 +522,7 @@
     </None>
     <None Include="Molding System_1_TemporaryKey.pfx" />
     <None Include="Molding System_2_TemporaryKey.pfx" />
+    <None Include="Molding System_3_TemporaryKey.pfx" />
     <None Include="Molding System_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
